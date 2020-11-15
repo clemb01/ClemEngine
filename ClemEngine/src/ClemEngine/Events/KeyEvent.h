@@ -2,8 +2,8 @@
 
 #include "Event.h"
 
-namespace ClemEngine
-{
+namespace ClemEngine {
+
 	class CLEMENGINE_API KeyEvent : public Event
 	{
 	public:
@@ -33,9 +33,8 @@ namespace ClemEngine
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
-
-		private:
-			int m_RepeatCount;
+	private:
+		int m_RepeatCount;
 	};
 
 	class CLEMENGINE_API KeyReleasedEvent : public KeyEvent

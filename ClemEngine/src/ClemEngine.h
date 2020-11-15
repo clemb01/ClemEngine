@@ -1,8 +1,11 @@
 #pragma once
 
-// For use by Engine application
+// For use by Hazel applications
 
 #include "ClemEngine/Application.h"
+#include "ClemEngine/Layer.h"
+#include "ClemEngine/Log.h"
 
-// ----- Entry Point ---------------
+// ---Entry Point---------------------
 #include "ClemEngine/EntryPoint.h"
+// -----------------------------------

@@ -65,14 +65,17 @@ project "ClemEngine"
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "CE_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Minecraft"
@@ -108,16 +111,19 @@ project "Minecraft"
 		defines
 		{
 			"CE_PLATFORM_WINDOWS"
-		}
+		}		
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "CE_DIST"
-		optimize "On" 
+		buildoptions "/MD"
+		optimize "On"

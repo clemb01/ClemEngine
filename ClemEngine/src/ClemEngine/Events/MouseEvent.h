@@ -2,8 +2,8 @@
 
 #include "Event.h"
 
-namespace ClemEngine
-{
+namespace ClemEngine {
+
 	class CLEMENGINE_API MouseMovedEvent : public Event
 	{
 	public:
@@ -22,7 +22,6 @@ namespace ClemEngine
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
 	private:
 		float m_MouseX, m_MouseY;
 	};
@@ -39,13 +38,12 @@ namespace ClemEngine
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseScrolledEvent: " << m_XOffset << ", " << m_YOffset;
+			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
 	private:
 		float m_XOffset, m_YOffset;
 	};
@@ -56,7 +54,6 @@ namespace ClemEngine
 		inline int GetMouseButton() const { return m_Button; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
 	protected:
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
@@ -95,4 +92,5 @@ namespace ClemEngine
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
+
 }

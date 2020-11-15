@@ -4,8 +4,11 @@
 
 extern ClemEngine::Application* ClemEngine::CreateApplication();
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
+	ClemEngine::Log::Init();
+	CE_CORE_WARN("Initialized Log!");
+
 	auto app = ClemEngine::CreateApplication();
 	app->Run();
 	delete app;

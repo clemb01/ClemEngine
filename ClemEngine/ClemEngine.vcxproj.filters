@@ -7,9 +7,14 @@
     <Filter Include="ClemEngine\Events">
       <UniqueIdentifier>{C0B1ED7E-2CC8-EB14-753F-7736E194BC9C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ClemEngine.h" />
     <ClInclude Include="src\ClemEngine\Application.h">
       <Filter>ClemEngine</Filter>
     </ClInclude>
@@ -31,21 +36,40 @@
     <ClInclude Include="src\ClemEngine\Events\MouseEvent.h">
       <Filter>ClemEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Layer.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\LayerStack.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Log.h">
       <Filter>ClemEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Window.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\cepch.h" />
-    <ClInclude Include="src\ClemEngine\Window.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\ClemEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Application.cpp">
       <Filter>ClemEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Layer.cpp">
+      <Filter>ClemEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\LayerStack.cpp">
+      <Filter>ClemEngine</Filter>
+    </ClCompile>
     <ClCompile Include="src\ClemEngine\Log.cpp">
       <Filter>ClemEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\cepch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
