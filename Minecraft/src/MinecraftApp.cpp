@@ -26,6 +26,7 @@ public:
 	MinecraftApp()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new ClemEngine::ImGuiLayer());
 	}
 
 	~MinecraftApp()
