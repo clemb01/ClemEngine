@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "ClemEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "ClemEngine/vendor/GLAD/include"
 
 include "ClemEngine/vendor/GLFW"
+include "ClemEngine/vendor/Glad"
 
 project "ClemEngine"
 	location "ClemEngine"
@@ -38,12 +40,14 @@ project "ClemEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "ClemEngine"
 		defines
 		{
 			"CE_PLATFORM_WINDOWS",
-			"CE_BUILD_DLL"
+			"CE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

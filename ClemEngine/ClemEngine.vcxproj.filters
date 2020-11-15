@@ -15,6 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ClemEngine.h" />
     <ClInclude Include="src\ClemEngine\Application.h">
       <Filter>ClemEngine</Filter>
     </ClInclude>
@@ -52,7 +53,6 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\cepch.h" />
-    <ClInclude Include="src\ClemEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Application.cpp">
