@@ -35,6 +35,8 @@
       <Filter>ClemEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\cepch.h" />
+    <ClInclude Include="src\ClemEngine\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>ClemEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\cepch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
