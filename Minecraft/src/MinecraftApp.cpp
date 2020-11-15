@@ -20,15 +20,15 @@ public:
 
 };
 
-class Sandbox : public ClemEngine::Application
+class MinecraftApp : public ClemEngine::Application
 {
 public:
-	Sandbox()
+	MinecraftApp()
 	{
 		PushLayer(new ExampleLayer());
 	}
 
-	~Sandbox()
+	~MinecraftApp()
 	{
 
 	}
@@ -37,5 +37,5 @@ public:
 
 ClemEngine::Application* ClemEngine::CreateApplication()
 {
-	return new Sandbox();
+	return new MinecraftApp();
 }
