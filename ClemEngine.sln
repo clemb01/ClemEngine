@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Minecraft", "Minecraft\Minecraft.vcxproj", "{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClemEngine", "ClemEngine\ClemEngine.vcxproj", "{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Dist|x64 = Dist|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}.Debug|x64.ActiveCfg = Debug|x64
+		{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}.Debug|x64.Build.0 = Debug|x64
+		{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}.Dist|x64.ActiveCfg = Dist|x64
+		{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}.Dist|x64.Build.0 = Dist|x64
+		{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}.Release|x64.ActiveCfg = Release|x64
+		{FEA1E9E8-6A0C-9E5F-B34A-4F051FF47BB4}.Release|x64.Build.0 = Release|x64
+		{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}.Debug|x64.ActiveCfg = Debug|x64
+		{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}.Debug|x64.Build.0 = Debug|x64
+		{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}.Dist|x64.ActiveCfg = Dist|x64
+		{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}.Dist|x64.Build.0 = Dist|x64
+		{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}.Release|x64.ActiveCfg = Release|x64
+		{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ClemEngine">
+      <UniqueIdentifier>{5C256B0E-48DD-AC5B-B1E4-85B79DBB474C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClemEngine\Events">
+      <UniqueIdentifier>{C0B1ED7E-2CC8-EB14-753F-7736E194BC9C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ClemEngine.h" />
+    <ClInclude Include="src\ClemEngine\Application.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\EntryPoint.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Events\ApplicationEvent.h">
+      <Filter>ClemEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Events\Event.h">
+      <Filter>ClemEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Events\KeyEvent.h">
+      <Filter>ClemEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Events\MouseEvent.h">
+      <Filter>ClemEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Log.h">
+      <Filter>ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cepch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ClemEngine\Application.cpp">
+      <Filter>ClemEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Log.cpp">
+      <Filter>ClemEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cepch.cpp" />
+  </ItemGroup>
+</Project>
