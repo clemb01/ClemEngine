@@ -17,9 +17,11 @@ IncludeDir["GLFW"] = "ClemEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "ClemEngine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
 
-include "ClemEngine/vendor/GLFW"
-include "ClemEngine/vendor/Glad"
-include "ClemEngine/vendor/imgui"
+group "Dependencies"
+	include "ClemEngine/vendor/GLFW"
+	include "ClemEngine/vendor/Glad"
+	include "ClemEngine/vendor/imgui"
+group ""
 
 project "ClemEngine"
 	location "ClemEngine"
@@ -69,7 +71,7 @@ project "ClemEngine"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Minecraft")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Minecraft/\"")
 		}
 
 	filter "configurations:Debug"
