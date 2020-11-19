@@ -7,6 +7,8 @@
 #include "ClemEngine/Events/Event.h"
 #include "ClemEngine/Events/ApplicationEvent.h"
 
+#include "ClemEngine/ImGui/ImGuiLayer.h"
+
 namespace ClemEngine {
 
 	class CLEMENGINE_API Application
@@ -28,6 +30,7 @@ namespace ClemEngine {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

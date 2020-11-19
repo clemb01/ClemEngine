@@ -2,9 +2,6 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>G:\Dev\C++\Minecraft\bin\Debug-windows-x86_64\ClemEngine\ClemEngine.dll</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
       <FullPath>G:\Dev\C++\Minecraft\bin\Debug-windows-x86_64\Minecraft\Minecraft.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
