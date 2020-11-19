@@ -159,9 +159,11 @@
     <ClInclude Include="src\ClemEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\ClemEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\ClemEngine\Input.h" />
+    <ClInclude Include="src\ClemEngine\KeyCodes.h" />
     <ClInclude Include="src\ClemEngine\Layer.h" />
     <ClInclude Include="src\ClemEngine\LayerStack.h" />
     <ClInclude Include="src\ClemEngine\Log.h" />
+    <ClInclude Include="src\ClemEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\ClemEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />

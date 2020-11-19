@@ -10,14 +10,18 @@ public:
 
 	void OnUpdate() override
 	{
-		CE_INFO("ExampleLayer::Update");
+		if (ClemEngine::Input::IsKeyPressed(CE_KEY_TAB))
+			CE_TRACE("Tab key is pressed !");
 	}
 
 	void OnEvent(ClemEngine::Event& event) override
 	{
-		CE_TRACE("{0}", event);
+		if (event.GetEventType() == ClemEngine::EventType::KeyPressed)
+		{
+			ClemEngine::KeyPressedEvent& e = (ClemEngine::KeyPressedEvent&)event;
+			CE_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
-
 };
 
 class MinecraftApp : public ClemEngine::Application
