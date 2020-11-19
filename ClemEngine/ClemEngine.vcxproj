@@ -158,6 +158,7 @@
     <ClInclude Include="src\ClemEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\ClemEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\ClemEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\ClemEngine\Input.h" />
     <ClInclude Include="src\ClemEngine\Layer.h" />
     <ClInclude Include="src\ClemEngine\LayerStack.h" />
     <ClInclude Include="src\ClemEngine\Log.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cepch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Application.cpp" />
@@ -177,6 +179,7 @@
     <ClCompile Include="src\cepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
