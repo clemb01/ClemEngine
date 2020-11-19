@@ -7,3 +7,6 @@
 [submodule "ClemEngine/vendor/imgui"]
 	path = ClemEngine/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "ClemEngine/vendor/glm"]
+	path = ClemEngine/vendor/glm
+	url = https://github.com/g-truc/glm
