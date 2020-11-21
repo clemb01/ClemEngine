@@ -1,14 +1,13 @@
 workspace "ClemEngine"
 	architecture "x64"
+	startproject "Minecraft"
 
 	configurations
 	{
 		"Debug",
 		"Release",
 		"Dist"
-	}
-	
-	startproject "Minecraft"
+	}	
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -18,17 +17,16 @@ IncludeDir["Glad"] = "ClemEngine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
 IncludeDir["glm"] = "ClemEngine/vendor/glm"
 
-group "Dependencies"
-	include "ClemEngine/vendor/GLFW"
-	include "ClemEngine/vendor/Glad"
-	include "ClemEngine/vendor/imgui"
-group ""
+include "ClemEngine/vendor/GLFW"
+include "ClemEngine/vendor/Glad"
+include "ClemEngine/vendor/imgui"
 
 project "ClemEngine"
 	location "ClemEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -42,6 +40,11 @@ project "ClemEngine"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -63,7 +66,6 @@ project "ClemEngine"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -73,31 +75,27 @@ project "ClemEngine"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Minecraft/\"")
-		}
-
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "CE_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "CE_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Minecraft"
 	location "Minecraft"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -112,6 +110,7 @@ project "Minecraft"
 	{
 		"ClemEngine/vendor/spdlog/include",
 		"ClemEngine/src",
+		"ClemEngine/vendor",
 		"%{IncludeDir.glm}"
 	}
 
@@ -121,7 +120,6 @@ project "Minecraft"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -132,14 +130,14 @@ project "Minecraft"
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "CE_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "CE_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"

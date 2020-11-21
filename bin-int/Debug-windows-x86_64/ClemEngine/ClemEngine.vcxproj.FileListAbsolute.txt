@@ -1,0 +1,2 @@
+G:\Dev\C++\Minecraft\bin\Debug-windows-x86_64\ClemEngine\ClemEngine.pdb
+G:\Dev\C++\Minecraft\bin-int\Debug-windows-x86_64\ClemEngine\ClemEngine.pdb

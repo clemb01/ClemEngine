@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef CE_PLATFORM_WINDOWS
+#if CE_DYNAMIC_LINK
 	#ifdef CE_BUILD_DLL
 		#define CLEMENGINE_API __declspec(dllexport)
 	#else
 		#define CLEMENGINE_API __declspec(dllimport)
 	#endif
+#else
+	#define CLEMENGINE_API
+#endif
 #else
 	#error ClemEngine only supports Windows!
 #endif
