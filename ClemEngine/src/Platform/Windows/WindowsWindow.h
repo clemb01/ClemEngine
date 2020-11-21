@@ -4,6 +4,8 @@
 
 #include <GLFW/glfw3.h>
 
+#include "ClemEngine/Renderer/GraphicsContext.h"
+
 namespace ClemEngine {
 
 	class WindowsWindow : public Window
@@ -30,6 +32,7 @@ namespace ClemEngine {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

@@ -155,7 +155,9 @@
     <ClInclude Include="src\ClemEngine\LayerStack.h" />
     <ClInclude Include="src\ClemEngine\Log.h" />
     <ClInclude Include="src\ClemEngine\MouseButtonCodes.h" />
+    <ClInclude Include="src\ClemEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\ClemEngine\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cepch.h" />
@@ -575,6 +577,7 @@
     <ClCompile Include="src\ClemEngine\Layer.cpp" />
     <ClCompile Include="src\ClemEngine\LayerStack.cpp" />
     <ClCompile Include="src\ClemEngine\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cepch.cpp">
