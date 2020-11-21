@@ -1,10 +1,9 @@
 #pragma once
 
 #include "ClemEngine/Window.h"
+#include "ClemEngine/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
-
-#include "ClemEngine/Renderer/GraphicsContext.h"
 
 namespace ClemEngine {
 
@@ -45,5 +44,4 @@ namespace ClemEngine {
 
 		WindowData m_Data;
 	};
-
 }

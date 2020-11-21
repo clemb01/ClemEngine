@@ -9,8 +9,8 @@
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
-namespace ClemEngine {
-
+namespace ClemEngine 
+{
 	class CLEMENGINE_API Application
 	{
 	public:
@@ -18,7 +18,6 @@ namespace ClemEngine {
 		virtual ~Application();
 
 		void Run();
-
 		void OnEvent(Event& e);
 
 		void PushLayer(Layer* layer);
@@ -26,6 +25,7 @@ namespace ClemEngine {
 
 		inline static Application& Get() { return *s_Instance; }
 		inline Window& GetWindow() { return *m_Window; }
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
@@ -34,10 +34,11 @@ namespace ClemEngine {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+
 		static Application* s_Instance;
 	};
 
 	// To be defined in CLIENT
 	Application* CreateApplication();
-
 }
