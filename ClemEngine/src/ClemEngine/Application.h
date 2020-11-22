@@ -9,6 +9,8 @@
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
+#include "ClemEngine/Renderer/Shader.h"
+
 namespace ClemEngine 
 {
 	class CLEMENGINE_API Application
@@ -35,6 +37,7 @@ namespace ClemEngine
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 
 		static Application* s_Instance;
 	};
