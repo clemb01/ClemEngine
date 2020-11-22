@@ -10,6 +10,7 @@
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
 #include "ClemEngine/Renderer/Shader.h"
+#include "ClemEngine/Renderer/Buffer.h"
 
 namespace ClemEngine 
 {
@@ -36,8 +37,10 @@ namespace ClemEngine
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		unsigned int m_VertexArray;
 		std::unique_ptr<Shader> m_Shader;
+		std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
 
 		static Application* s_Instance;
 	};

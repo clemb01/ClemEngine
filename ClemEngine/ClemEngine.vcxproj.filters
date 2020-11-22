@@ -96,6 +96,9 @@
     <ClInclude Include="src\ClemEngine\Renderer\GraphicsContext.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Renderer\Shader.h">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Window.h">
       <Filter>src\ClemEngine</Filter>
     </ClInclude>
@@ -1335,7 +1338,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\ClemEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\ClemEngine\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Application.cpp">
@@ -1356,6 +1361,9 @@
     <ClCompile Include="src\ClemEngine\Log.cpp">
       <Filter>src\ClemEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Renderer\Shader.cpp">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1368,6 +1376,8 @@
     <ClCompile Include="src\cepch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\ClemEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\ClemEngine\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
