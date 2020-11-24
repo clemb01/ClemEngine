@@ -8,9 +8,4 @@ namespace ClemEngine {
 	{
 	}
 
-	Layer::~Layer()
-	{
-
-	}
-
 }
