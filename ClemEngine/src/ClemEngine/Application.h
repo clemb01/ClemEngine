@@ -13,6 +13,8 @@
 #include "ClemEngine/Renderer/Buffer.h"
 #include "ClemEngine/Renderer/VertexArray.h"
 
+#include "ClemEngine/Renderer/OrthographicCamera.h"
+
 namespace ClemEngine 
 {
 	class CLEMENGINE_API Application
@@ -43,6 +45,8 @@ namespace ClemEngine
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 
 		static Application* s_Instance;
 	};
