@@ -12,6 +12,17 @@
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
+// ---Renderer------------------------
+#include "ClemEngine/Renderer/Renderer.h"
+#include "ClemEngine/Renderer/RenderCommand.h"
+
+#include "ClemEngine/Renderer/Shader.h"
+#include "ClemEngine/Renderer/Buffer.h"
+#include "ClemEngine/Renderer/VertexArray.h"
+
+#include "ClemEngine/Renderer/OrthographicCamera.h"
+// -----------------------------------
+
 // ---Entry Point---------------------
 #include "ClemEngine/EntryPoint.h"
 // -----------------------------------

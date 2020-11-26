@@ -44,7 +44,8 @@ project "ClemEngine"
 
 	defines
 	{
-		"_CRT_SECURE_NO_WARNINGS"
+		"_CRT_SECURE_NO_WARNINGS",
+		"CE_KEYBOARD_AZERTY"
 	}
 
 	includedirs
@@ -124,7 +125,8 @@ project "Minecraft"
 
 		defines
 		{
-			"CE_PLATFORM_WINDOWS"
+			"CE_PLATFORM_WINDOWS",
+			"CE_KEYBOARD_AZERTY"
 		}		
 
 	filter "configurations:Debug"
