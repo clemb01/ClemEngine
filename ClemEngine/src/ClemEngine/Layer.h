@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ClemEngine/Core.h"
+#include "ClemEngine/Core/Timestep.h"
 #include "ClemEngine/Events/Event.h"
 
 namespace ClemEngine {
@@ -13,7 +14,7 @@ namespace ClemEngine {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

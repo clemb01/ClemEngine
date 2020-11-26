@@ -6,6 +6,8 @@
 #include "ClemEngine/Layer.h"
 #include "ClemEngine/Log.h"
 
+#include "ClemEngine/Core/TimeStep.h"
+
 #include "ClemEngine/Input.h"
 #include "ClemEngine/KeyCodes.h"
 #include "ClemEngine/MouseButtonCodes.h"

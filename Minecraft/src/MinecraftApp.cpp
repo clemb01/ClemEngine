@@ -125,22 +125,22 @@ public:
 		m_BlueShader.reset(new ClemEngine::Shader(blueShaderVertexSrc, blueShaderFragmentSrc2));
 	}
 
-	void OnUpdate() override
+	void OnUpdate(ClemEngine::Timestep ts) override
 	{
 		if (ClemEngine::Input::IsKeyPressed(CE_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		else if (ClemEngine::Input::IsKeyPressed(CE_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 
 		if (ClemEngine::Input::IsKeyPressed(CE_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * ts;
 		else if (ClemEngine::Input::IsKeyPressed(CE_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 
 		if (ClemEngine::Input::IsKeyPressed(CE_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * ts;
 		else if (ClemEngine::Input::IsKeyPressed(CE_KEY_E))
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 
 		ClemEngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		ClemEngine::RenderCommand::Clear();
@@ -175,10 +175,10 @@ private :
 
 	ClemEngine::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.1f;
+	float m_CameraMoveSpeed = 2.0f;
 
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 2.0f;
+	float m_CameraRotationSpeed = 90.0f;
 };
 
 class MinecraftApp : public ClemEngine::Application

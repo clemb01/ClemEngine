@@ -7,6 +7,8 @@
 #include "ClemEngine/Events/Event.h"
 #include "ClemEngine/Events/ApplicationEvent.h"
 
+#include "ClemEngine/Core/TimeStep.h"
+
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
 namespace ClemEngine 
@@ -29,10 +31,13 @@ namespace ClemEngine
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		Timestep m_Timestep;
+		float m_LastFrameTime = 0.0f;
 
 		static Application* s_Instance;
 	};

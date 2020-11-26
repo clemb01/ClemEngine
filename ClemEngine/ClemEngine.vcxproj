@@ -143,6 +143,7 @@
     <ClInclude Include="src\ClemEngine.h" />
     <ClInclude Include="src\ClemEngine\Application.h" />
     <ClInclude Include="src\ClemEngine\Core.h" />
+    <ClInclude Include="src\ClemEngine\Core\Timestep.h" />
     <ClInclude Include="src\ClemEngine\EntryPoint.h" />
     <ClInclude Include="src\ClemEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\ClemEngine\Events\Event.h" />
