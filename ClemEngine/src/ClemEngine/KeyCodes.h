@@ -172,7 +172,7 @@
 #define CE_KEY_W                  90
 #define CE_KEY_X                  88
 #define CE_KEY_Y                  89
-#define CE_KEY_Z                  90
+#define CE_KEY_Z                  87
 #define CE_KEY_LEFT_BRACKET       91  /* [ */
 #define CE_KEY_BACKSLASH          92  /* \ */
 #define CE_KEY_RIGHT_BRACKET      93  /* ] */
