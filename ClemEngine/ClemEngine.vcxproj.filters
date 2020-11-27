@@ -7,6 +7,9 @@
     <Filter Include="src\ClemEngine">
       <UniqueIdentifier>{13C27145-FF8F-654B-E823-D671D49041B0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ClemEngine\Core">
+      <UniqueIdentifier>{4B2AA60C-B78B-831A-40F9-C9CCAC59BAD9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\ClemEngine\Events">
       <UniqueIdentifier>{97FAFBD3-0367-B7CE-CC5A-4F2C3886D936}</UniqueIdentifier>
     </Filter>
@@ -56,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Core.h">
       <Filter>src\ClemEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\Timestep.h">
+      <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\EntryPoint.h">
       <Filter>src\ClemEngine</Filter>
@@ -127,6 +133,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1365,8 +1374,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Core\Timestep.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Application.cpp">
@@ -1417,6 +1424,9 @@
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1429,6 +1439,5 @@
     <ClCompile Include="src\cepch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>

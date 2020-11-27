@@ -22,7 +22,7 @@ public:
 			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f
 		};
 
-		std::shared_ptr<ClemEngine::VertexBuffer> vertexBuffer;
+		ClemEngine::Ref<ClemEngine::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(ClemEngine::VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		ClemEngine::BufferLayout layout = {
@@ -35,7 +35,7 @@ public:
 
 		uint32_t indices[3] = { 0, 1, 2 };
 
-		std::shared_ptr<ClemEngine::IndexBuffer> indexBuffer;
+		ClemEngine::Ref<ClemEngine::IndexBuffer> indexBuffer;
 		indexBuffer.reset(ClemEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -48,7 +48,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<ClemEngine::VertexBuffer> squareVB;
+		ClemEngine::Ref<ClemEngine::VertexBuffer> squareVB;
 		squareVB.reset(ClemEngine::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
 		squareVB->SetLayout({
@@ -59,7 +59,7 @@ public:
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
 
-		std::shared_ptr<ClemEngine::IndexBuffer> squareIB;
+		ClemEngine::Ref<ClemEngine::IndexBuffer> squareIB;
 		squareIB.reset(ClemEngine::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -198,11 +198,11 @@ public:
 	}
 
 private :
-	std::shared_ptr<ClemEngine::Shader> m_Shader;
-	std::shared_ptr<ClemEngine::VertexArray> m_VertexArray;
+	ClemEngine::Ref<ClemEngine::Shader> m_Shader;
+	ClemEngine::Ref<ClemEngine::VertexArray> m_VertexArray;
 
-	std::shared_ptr<ClemEngine::Shader> m_FlatColorShader;
-	std::shared_ptr<ClemEngine::VertexArray> m_SquareVA;
+	ClemEngine::Ref<ClemEngine::Shader> m_FlatColorShader;
+	ClemEngine::Ref<ClemEngine::VertexArray> m_SquareVA;
 
 	ClemEngine::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
