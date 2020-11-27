@@ -4,9 +4,9 @@
 [submodule "ClemEngine/vendor/GLFW"]
 	path = ClemEngine/vendor/GLFW
 	url = https://github.com/clemb01/GLFW
-[submodule "ClemEngine/vendor/imgui"]
-	path = ClemEngine/vendor/imgui
-	url = https://github.com/clemb01/imgui
 [submodule "ClemEngine/vendor/glm"]
 	path = ClemEngine/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "ClemEngine/vendor/imgui"]
+	path = ClemEngine/vendor/imgui
+	url = https://github.com/clemb01/imgui
