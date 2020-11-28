@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "ClemEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "ClemEngine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
 IncludeDir["glm"] = "ClemEngine/vendor/glm"
+IncludeDir["stb_image"] = "ClemEngine/vendor/stb_image"
 
 include "ClemEngine/vendor/GLFW"
 include "ClemEngine/vendor/Glad"
@@ -38,6 +39,8 @@ project "ClemEngine"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -55,7 +58,8 @@ project "ClemEngine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 	
 	links
