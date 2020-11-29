@@ -26,9 +26,18 @@ namespace ClemEngine
 		auto shaderSource = PreProcess(source);
 
 		Compile(shaderSource);
+
+		// Extract name from filepath
+		auto lastSlash = filepath.find_last_of("/\\");
+		lastSlash = lastSlash == std::string::npos ? 0 : lastSlash + 1;
+		auto lastDot = filepath.rfind(".");
+		auto count = lastDot == std::string::npos ? filepath.size() - lastSlash : lastDot - lastSlash;
+
+		m_Name = filepath.substr(lastSlash, count);
 	}
 
-	OpenGLShader::OpenGLShader(const std::string& vertexSrc, const std::string& fragmentSrc)
+	OpenGLShader::OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
+		: m_Name(name)
 	{
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertexSrc;
@@ -45,7 +54,7 @@ namespace ClemEngine
 	std::string OpenGLShader::ReadFile(const std::string& filepath)
 	{
 		std::string result;
-		std::ifstream in(filepath, std::ios::in, std::ios::binary);
+		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 
 		if (in)
 		{
@@ -87,12 +96,14 @@ namespace ClemEngine
 		return shaderSources;
 	}
 
-	void OpenGLShader::Compile(std::unordered_map<GLenum, std::string>& shaderSource)
+	void OpenGLShader::Compile(std::unordered_map<GLenum, std::string>& shaderSources)
 	{
 		GLuint program = glCreateProgram();
-		std::vector<GLenum> glShaderIDs(shaderSource.size());
+		CE_CORE_ASSERT(shaderSources.size() <= 2, "We only support 2 shaders for now !");
+		std::array<GLenum, 2> glShaderIDs;
+		int glShaderIDIndex = 0;
 
-		for (auto& kv : shaderSource)
+		for (auto& kv : shaderSources)
 		{
 			GLenum type = kv.first;
 			const std::string& source = kv.second;
@@ -123,7 +134,7 @@ namespace ClemEngine
 			}
 
 			glAttachShader(program, shader);
-			glShaderIDs.push_back(shader);
+			glShaderIDs[glShaderIDIndex++] = shader;
 		}
 
 		glLinkProgram(program);
