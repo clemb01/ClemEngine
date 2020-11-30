@@ -11,6 +11,7 @@
 #include "ClemEngine/Input.h"
 #include "ClemEngine/KeyCodes.h"
 #include "ClemEngine/MouseButtonCodes.h"
+#include "ClemEngine/OrthographicCameraController.h"
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
