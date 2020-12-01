@@ -17,6 +17,7 @@
 
 // ---Renderer------------------------
 #include "ClemEngine/Renderer/Renderer.h"
+#include "ClemEngine/Renderer/Renderer2D.h"
 #include "ClemEngine/Renderer/RenderCommand.h"
 
 #include "ClemEngine/Renderer/Buffer.h"

@@ -167,6 +167,7 @@
     <ClInclude Include="src\ClemEngine\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\ClemEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Renderer.h" />
+    <ClInclude Include="src\ClemEngine\Renderer\Renderer2D.h" />
     <ClInclude Include="src\ClemEngine\Renderer\RendererAPI.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Shader.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Texture.h" />
@@ -602,6 +603,7 @@
     <ClCompile Include="src\ClemEngine\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\ClemEngine\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\Shader.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\Texture.cpp" />

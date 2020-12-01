@@ -123,6 +123,9 @@
     <ClInclude Include="src\ClemEngine\Renderer\Renderer.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Renderer\Renderer2D.h">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\RendererAPI.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
@@ -1422,6 +1425,9 @@
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\Renderer.cpp">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Renderer\Renderer2D.cpp">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\RendererAPI.cpp">
