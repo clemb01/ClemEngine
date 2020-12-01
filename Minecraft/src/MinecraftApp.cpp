@@ -1,4 +1,5 @@
 #include <ClemEngine.h>
+#include <ClemEngine/Core/EntryPoint.h>
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
@@ -7,13 +8,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Sandbox2D.h"
+
 class ExampleLayer : public ClemEngine::Layer
 {
 public:
 	ExampleLayer()
 		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
-		m_VertexArray.reset(ClemEngine::VertexArray::Create());
+		m_VertexArray = ClemEngine::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
@@ -38,7 +41,7 @@ public:
 		indexBuffer.reset(ClemEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(ClemEngine::VertexArray::Create());
+		m_SquareVA = ClemEngine::VertexArray::Create();
 
 		float squareVertices[4 * 5] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -209,12 +212,12 @@ class MinecraftApp : public ClemEngine::Application
 public:
 	MinecraftApp()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 
 	~MinecraftApp()
 	{
-
 	}
 };
 

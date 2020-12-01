@@ -26,7 +26,3 @@
 
 #include "ClemEngine/Renderer/OrthographicCamera.h"
 // -----------------------------------
-
-// ---Entry Point---------------------
-#include "ClemEngine/Core/EntryPoint.h"
-// -----------------------------------
