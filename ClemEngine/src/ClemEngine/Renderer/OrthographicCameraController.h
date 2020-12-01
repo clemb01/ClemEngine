@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Renderer/OrthographicCamera.h"
+#include "OrthographicCamera.h"
 #include "ClemEngine/Core/Timestep.h"
 
 #include "ClemEngine/Events/ApplicationEvent.h"

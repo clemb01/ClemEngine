@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "ClemEngine/Log.h"
+#include "ClemEngine/Core/Log.h"
 
 #ifdef CE_PLATFORM_WINDOWS
 	#include <Windows.h>

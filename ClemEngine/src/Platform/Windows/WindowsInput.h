@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ClemEngine/Input.h"
+#include "ClemEngine/Core/Input.h"
 
 namespace ClemEngine
 {

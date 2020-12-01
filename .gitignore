@@ -3,9 +3,6 @@
 !vendor/premake/bin/
 bin-int/
 
-# Hazel files
-*.log
-
 # Visual Studio files and folder
 .vs/
 **.sln

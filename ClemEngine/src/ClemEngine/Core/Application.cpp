@@ -1,7 +1,7 @@
 #include "cepch.h"
 #include "Application.h"
 
-#include "ClemEngine/Log.h"
+#include "Log.h"
 
 #include "ClemEngine/Renderer/Renderer.h"
 

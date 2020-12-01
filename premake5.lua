@@ -80,7 +80,6 @@ project "ClemEngine"
 
 		defines
 		{
-			"CE_PLATFORM_WINDOWS",
 			"CE_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -134,7 +133,6 @@ project "Minecraft"
 
 		defines
 		{
-			"CE_PLATFORM_WINDOWS",
 			"CE_KEYBOARD_AZERTY"
 		}		
 

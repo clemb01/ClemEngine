@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ClemEngine/Core.h"
+#include "Core.h"
 #include "ClemEngine/Core/Timestep.h"
 #include "ClemEngine/Events/Event.h"
 

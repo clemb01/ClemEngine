@@ -26,7 +26,7 @@ public:
 
 		ClemEngine::BufferLayout layout = {
 			{ ClemEngine::ShaderDataType::Float3, "a_Position" },
-			{ ClemEngine::ShaderDataType::Float4, "a_Color" },
+			{ ClemEngine::ShaderDataType::Float4, "a_Color" }
 		};
 
 		vertexBuffer->SetLayout(layout);

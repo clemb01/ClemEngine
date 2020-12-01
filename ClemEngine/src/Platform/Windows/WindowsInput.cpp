@@ -1,12 +1,12 @@
 #include "cepch.h"
 #include "WindowsInput.h"
 
-#include "ClemEngine/Application.h"
+#include "ClemEngine/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace ClemEngine
 {
-	Input* Input::s_Instance = new WindowsInput();
+	Scope<Input> Input::s_Instance = CreateScope<WindowsInput>();
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode)
 	{

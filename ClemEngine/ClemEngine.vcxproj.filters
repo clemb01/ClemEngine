@@ -57,17 +57,38 @@
     <ClInclude Include="src\ClemEngine.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Application.h">
-      <Filter>src\ClemEngine</Filter>
+    <ClInclude Include="src\ClemEngine\Core\Application.h">
+      <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Core.h">
-      <Filter>src\ClemEngine</Filter>
+    <ClInclude Include="src\ClemEngine\Core\Core.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\EntryPoint.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\Input.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\KeyCodes.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\Layer.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\LayerStack.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\Log.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\MouseButtonCodes.h">
+      <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Core\Timestep.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\EntryPoint.h">
-      <Filter>src\ClemEngine</Filter>
+    <ClInclude Include="src\ClemEngine\Core\Window.h">
+      <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Events\ApplicationEvent.h">
       <Filter>src\ClemEngine\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\ClemEngine\ImGui\ImGuiLayer.h">
       <Filter>src\ClemEngine\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Input.h">
-      <Filter>src\ClemEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\KeyCodes.h">
-      <Filter>src\ClemEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\Layer.h">
-      <Filter>src\ClemEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\LayerStack.h">
-      <Filter>src\ClemEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\Log.h">
-      <Filter>src\ClemEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\MouseButtonCodes.h">
-      <Filter>src\ClemEngine</Filter>
-    </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Buffer.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\OrthographicCamera.h">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Renderer\OrthographicCameraController.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\VertexArray.h">
       <Filter>src\ClemEngine\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\Window.h">
-      <Filter>src\ClemEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1386,11 +1389,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\ClemEngine\Application.cpp">
-      <Filter>src\ClemEngine</Filter>
+    <ClCompile Include="src\ClemEngine\Core\Application.cpp">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Core\Layer.cpp">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Core\LayerStack.cpp">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Core\Log.cpp">
+      <Filter>src\ClemEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiBuild.cpp">
       <Filter>src\ClemEngine\ImGui</Filter>
@@ -1398,19 +1409,13 @@
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiLayer.cpp">
       <Filter>src\ClemEngine\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\Layer.cpp">
-      <Filter>src\ClemEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ClemEngine\LayerStack.cpp">
-      <Filter>src\ClemEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ClemEngine\Log.cpp">
-      <Filter>src\ClemEngine</Filter>
-    </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\Buffer.cpp">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\OrthographicCamera.cpp">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Renderer\OrthographicCameraController.cpp">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\RenderCommand.cpp">
@@ -1461,6 +1466,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

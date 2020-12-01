@@ -2,16 +2,16 @@
 
 // For use by Hazel applications
 
-#include "ClemEngine/Application.h"
-#include "ClemEngine/Layer.h"
-#include "ClemEngine/Log.h"
+#include "ClemEngine/Core/Application.h"
+#include "ClemEngine/Core/Layer.h"
+#include "ClemEngine/Core/Log.h"
 
 #include "ClemEngine/Core/TimeStep.h"
 
-#include "ClemEngine/Input.h"
-#include "ClemEngine/KeyCodes.h"
-#include "ClemEngine/MouseButtonCodes.h"
-#include "ClemEngine/OrthographicCameraController.h"
+#include "ClemEngine/Core/Input.h"
+#include "ClemEngine/Core/KeyCodes.h"
+#include "ClemEngine/Core/MouseButtonCodes.h"
+#include "ClemEngine/Renderer/OrthographicCameraController.h"
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
@@ -28,5 +28,5 @@
 // -----------------------------------
 
 // ---Entry Point---------------------
-#include "ClemEngine/EntryPoint.h"
+#include "ClemEngine/Core/EntryPoint.h"
 // -----------------------------------

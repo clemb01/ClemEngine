@@ -1,8 +1,8 @@
 #include "cepch.h"
 #include "OrthographicCameraController.h"
 
-#include "ClemEngine/Input.h"
-#include "ClemEngine/KeyCodes.h"
+#include "ClemEngine/Core/Input.h"
+#include "ClemEngine/Core/KeyCodes.h"
 
 namespace ClemEngine
 {	
@@ -13,15 +13,27 @@ namespace ClemEngine
 
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
-		if (Input::IsKeyPressed(CE_KEY_LEFT) || Input::IsKeyPressed(CE_KEY_Q))
-			m_CameraPosition.x -= m_CameraTranslationSpeed * ts;
+		if (Input::IsKeyPressed(CE_KEY_LEFT) || Input::IsKeyPressed(CE_KEY_Q)) 
+		{
+			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		else if (ClemEngine::Input::IsKeyPressed(CE_KEY_RIGHT) || ClemEngine::Input::IsKeyPressed(CE_KEY_D))
-			m_CameraPosition.x += m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 
 		if (Input::IsKeyPressed(CE_KEY_UP) || Input::IsKeyPressed(CE_KEY_Z))
-			m_CameraPosition.y += m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x += -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		else if (Input::IsKeyPressed(CE_KEY_DOWN) || Input::IsKeyPressed(CE_KEY_S))
-			m_CameraPosition.y -= m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x -= -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 
 		if (m_Rotation)
 		{
@@ -29,6 +41,11 @@ namespace ClemEngine
 				m_CameraRotation += m_CameraRotationSpeed * ts;
 			else if (Input::IsKeyPressed(CE_KEY_E))
 				m_CameraRotation -= m_CameraRotationSpeed * ts;
+
+			if (m_CameraRotation > 180.0f)
+				m_CameraRotation -= 360.0f;
+			else if (m_CameraRotation <= -180.0f)
+				m_CameraRotation += 360.0f;
 
 			m_Camera.SetRotation(m_CameraRotation);
 		}

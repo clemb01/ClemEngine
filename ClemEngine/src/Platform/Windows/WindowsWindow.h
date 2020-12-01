@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ClemEngine/Window.h"
+#include "ClemEngine/Core/Window.h"
 #include "ClemEngine/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
@@ -31,7 +31,7 @@ namespace ClemEngine {
 
 	private:
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		Scope<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

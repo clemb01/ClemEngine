@@ -2,7 +2,7 @@
 
 #include "cepch.h"
 
-#include "ClemEngine/Core.h"
+#include "Core.h"
 #include "ClemEngine/Events/Event.h"
 
 namespace ClemEngine {

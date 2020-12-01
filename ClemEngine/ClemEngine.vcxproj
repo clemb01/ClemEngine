@@ -76,11 +76,13 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CE_KEYBOARD_AZERTY;CE_PLATFORM_WINDOWS;CE_BUILD_DLL;GLFW_INCLUDE_NONE;CE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CE_KEYBOARD_AZERTY;CE_BUILD_DLL;GLFW_INCLUDE_NONE;CE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -96,7 +98,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CE_KEYBOARD_AZERTY;CE_PLATFORM_WINDOWS;CE_BUILD_DLL;GLFW_INCLUDE_NONE;CE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CE_KEYBOARD_AZERTY;CE_BUILD_DLL;GLFW_INCLUDE_NONE;CE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -104,6 +106,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -120,7 +123,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CE_KEYBOARD_AZERTY;CE_PLATFORM_WINDOWS;CE_BUILD_DLL;GLFW_INCLUDE_NONE;CE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CE_KEYBOARD_AZERTY;CE_BUILD_DLL;GLFW_INCLUDE_NONE;CE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -128,6 +131,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -141,32 +145,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\ClemEngine.h" />
-    <ClInclude Include="src\ClemEngine\Application.h" />
-    <ClInclude Include="src\ClemEngine\Core.h" />
+    <ClInclude Include="src\ClemEngine\Core\Application.h" />
+    <ClInclude Include="src\ClemEngine\Core\Core.h" />
+    <ClInclude Include="src\ClemEngine\Core\EntryPoint.h" />
+    <ClInclude Include="src\ClemEngine\Core\Input.h" />
+    <ClInclude Include="src\ClemEngine\Core\KeyCodes.h" />
+    <ClInclude Include="src\ClemEngine\Core\Layer.h" />
+    <ClInclude Include="src\ClemEngine\Core\LayerStack.h" />
+    <ClInclude Include="src\ClemEngine\Core\Log.h" />
+    <ClInclude Include="src\ClemEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\ClemEngine\Core\Timestep.h" />
-    <ClInclude Include="src\ClemEngine\EntryPoint.h" />
+    <ClInclude Include="src\ClemEngine\Core\Window.h" />
     <ClInclude Include="src\ClemEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\ClemEngine\Events\Event.h" />
     <ClInclude Include="src\ClemEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\ClemEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\ClemEngine\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\ClemEngine\Input.h" />
-    <ClInclude Include="src\ClemEngine\KeyCodes.h" />
-    <ClInclude Include="src\ClemEngine\Layer.h" />
-    <ClInclude Include="src\ClemEngine\LayerStack.h" />
-    <ClInclude Include="src\ClemEngine\Log.h" />
-    <ClInclude Include="src\ClemEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Buffer.h" />
     <ClInclude Include="src\ClemEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\ClemEngine\Renderer\OrthographicCamera.h" />
-    <ClInclude Include="src\ClemEngine\OrthographicCameraController.h" />
+    <ClInclude Include="src\ClemEngine\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\ClemEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\ClemEngine\Renderer\RendererAPI.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Shader.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Texture.h" />
     <ClInclude Include="src\ClemEngine\Renderer\VertexArray.h" />
-    <ClInclude Include="src\ClemEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -587,15 +591,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\ClemEngine\Application.cpp" />
+    <ClCompile Include="src\ClemEngine\Core\Application.cpp" />
+    <ClCompile Include="src\ClemEngine\Core\Layer.cpp" />
+    <ClCompile Include="src\ClemEngine\Core\LayerStack.cpp" />
+    <ClCompile Include="src\ClemEngine\Core\Log.cpp" />
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\ClemEngine\Layer.cpp" />
-    <ClCompile Include="src\ClemEngine\LayerStack.cpp" />
-    <ClCompile Include="src\ClemEngine\Log.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\OrthographicCamera.cpp" />
-    <ClCompile Include="src\ClemEngine\OrthographicCameraController.cpp" />
+    <ClCompile Include="src\ClemEngine\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\RendererAPI.cpp" />

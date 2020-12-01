@@ -3,7 +3,7 @@
 #include "Core.h"
 
 #include "Window.h"
-#include "ClemEngine/LayerStack.h"
+#include "LayerStack.h"
 #include "ClemEngine/Events/Event.h"
 #include "ClemEngine/Events/ApplicationEvent.h"
 
