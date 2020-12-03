@@ -16,9 +16,9 @@ namespace ClemEngine {
 		CE_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
-	Window* Window::Create(const WindowProps& props)
+	Scope<Window> Window::Create(const WindowProps& props)
 	{
-		return new WindowsWindow(props);
+		return CreateScope<WindowsWindow>(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -41,8 +41,6 @@ namespace ClemEngine {
 
 		if (s_GLFWWindowCount == 0)
 		{
-			CE_CORE_INFO("Initializing GLFW");
-			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
 			CE_CORE_ASSERT(success, "Could not intialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
@@ -52,7 +50,7 @@ namespace ClemEngine {
 
 		s_GLFWWindowCount++;
 
-		m_Context = CreateScope<OpenGLContext>(m_Window);
+		m_Context = GraphicsContext::Create(m_Window);
 		m_Context->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
@@ -156,7 +154,6 @@ namespace ClemEngine {
 
 		if (s_GLFWWindowCount == 0)
 		{
-			CE_CORE_INFO("Terminating GLFW");
 			glfwTerminate();
 		}
 	}

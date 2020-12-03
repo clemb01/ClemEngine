@@ -9,18 +9,18 @@ namespace ClemEngine
 	{
 		switch (type)
 		{
-		case ClemEngine::ShaderDataType::None:		return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Float:		return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Float2:	return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Float3:	return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Float4:	return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Mat3:		return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Mat4:		return GL_FLOAT;
-		case ClemEngine::ShaderDataType::Int:		return GL_INT;
-		case ClemEngine::ShaderDataType::Int2:		return GL_INT;
-		case ClemEngine::ShaderDataType::Int3:		return GL_INT;
-		case ClemEngine::ShaderDataType::Int4:		return GL_INT;
-		case ClemEngine::ShaderDataType::Bool:		return GL_BOOL;
+		case ShaderDataType::None:		return GL_FLOAT;
+		case ShaderDataType::Float:		return GL_FLOAT;
+		case ShaderDataType::Float2:	return GL_FLOAT;
+		case ShaderDataType::Float3:	return GL_FLOAT;
+		case ShaderDataType::Float4:	return GL_FLOAT;
+		case ShaderDataType::Mat3:		return GL_FLOAT;
+		case ShaderDataType::Mat4:		return GL_FLOAT;
+		case ShaderDataType::Int:		return GL_INT;
+		case ShaderDataType::Int2:		return GL_INT;
+		case ShaderDataType::Int3:		return GL_INT;
+		case ShaderDataType::Int4:		return GL_INT;
+		case ShaderDataType::Bool:		return GL_BOOL;
 		}
 
 		CE_CORE_ASSERT(false, "Unknown ShaderDataType !");

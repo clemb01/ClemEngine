@@ -1,7 +1,7 @@
 #include "cepch.h"
 #include "Texture.h"
 
-#include "Renderer.h"
+#include "CLemEngine/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace ClemEngine

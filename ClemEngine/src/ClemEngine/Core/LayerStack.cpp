@@ -1,12 +1,8 @@
 #include "cepch.h"
 #include "LayerStack.h"
 
-namespace ClemEngine {
-
-	LayerStack::LayerStack()
-	{
-	}
-
+namespace ClemEngine 
+{
 	LayerStack::~LayerStack()
 	{
 		for (Layer* layer : m_Layers)

@@ -1,9 +1,7 @@
 #include <ClemEngine.h>
 #include <ClemEngine/Core/EntryPoint.h>
 
-#include "Platform/OpenGL/OpenGLShader.h"
-
-#include "imgui/imgui.h"
+#include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -24,8 +22,7 @@ public:
 			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f
 		};
 
-		ClemEngine::Ref<ClemEngine::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(ClemEngine::VertexBuffer::Create(vertices, sizeof(vertices)));
+		ClemEngine::Ref<ClemEngine::VertexBuffer> vertexBuffer =ClemEngine::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		ClemEngine::BufferLayout layout = {
 			{ ClemEngine::ShaderDataType::Float3, "a_Position" },
@@ -37,8 +34,7 @@ public:
 
 		uint32_t indices[3] = { 0, 1, 2 };
 
-		ClemEngine::Ref<ClemEngine::IndexBuffer> indexBuffer;
-		indexBuffer.reset(ClemEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		ClemEngine::Ref<ClemEngine::IndexBuffer> indexBuffer = ClemEngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = ClemEngine::VertexArray::Create();
@@ -50,8 +46,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		ClemEngine::Ref<ClemEngine::VertexBuffer> squareVB;
-		squareVB.reset(ClemEngine::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		ClemEngine::Ref<ClemEngine::VertexBuffer> squareVB = ClemEngine::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ ClemEngine::ShaderDataType::Float3, "a_Position" },
@@ -62,8 +57,7 @@ public:
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
 
-		ClemEngine::Ref<ClemEngine::IndexBuffer> squareIB;
-		squareIB.reset(ClemEngine::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		ClemEngine::Ref<ClemEngine::IndexBuffer> squareIB = ClemEngine::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(
@@ -137,8 +131,8 @@ public:
 		m_Texture = ClemEngine::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_LogoTexture = ClemEngine::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-		std::dynamic_pointer_cast<ClemEngine::OpenGLShader>(textureShader)->Bind();
-		std::dynamic_pointer_cast<ClemEngine::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
+		textureShader->Bind();
+		textureShader->SetInt("u_Texture", 0);
 	}
 
 	void OnUpdate(ClemEngine::Timestep ts) override
@@ -152,8 +146,8 @@ public:
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
-		std::dynamic_pointer_cast<ClemEngine::OpenGLShader>(m_FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<ClemEngine::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		m_FlatColorShader->Bind();
+		m_FlatColorShader->SetFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++)
 		{

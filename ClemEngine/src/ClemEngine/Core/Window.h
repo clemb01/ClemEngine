@@ -22,7 +22,7 @@ namespace ClemEngine {
 	};
 
 	// Interface representing a desktop system based Window
-	class CLEMENGINE_API Window
+	class Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
@@ -41,7 +41,7 @@ namespace ClemEngine {
 
 		virtual void* GetNativeWindow() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps());
+		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};
 
 }

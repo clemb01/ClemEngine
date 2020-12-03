@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Core.h"
-#include "Layer.h"
+#include "ClemEngine/Core/Core.h"
+#include "ClemEngine/Core/Layer.h"
 
 #include <vector>
 
-namespace ClemEngine {
-
-	class CLEMENGINE_API LayerStack
+namespace ClemEngine 
+{
+	class LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

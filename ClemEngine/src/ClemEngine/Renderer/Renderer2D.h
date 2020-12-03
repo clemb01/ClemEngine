@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "ClemEngine/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "ClemEngine/Renderer/Texture.h"
 
 namespace ClemEngine
 {

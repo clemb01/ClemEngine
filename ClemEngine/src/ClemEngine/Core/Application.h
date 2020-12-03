@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Core.h"
+#include "ClemEngine/Core/Core.h"
 
-#include "Window.h"
-#include "LayerStack.h"
+#include "ClemEngine/Core/Window.h"
+#include "ClemEngine/Core/LayerStack.h"
 #include "ClemEngine/Events/Event.h"
 #include "ClemEngine/Events/ApplicationEvent.h"
 
@@ -17,7 +17,7 @@ namespace ClemEngine
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 		void OnEvent(Event& e);

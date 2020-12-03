@@ -2,8 +2,8 @@
 
 #include "RenderCommand.h"
 
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "ClemEngine/Renderer/OrthographicCamera.h"
+#include "ClemEngine/Renderer/Shader.h"
 
 namespace ClemEngine
 {
@@ -11,6 +11,8 @@ namespace ClemEngine
 	{
 	public:
 		static void Init();
+		static void Shutdown();
+
 		static void OnWindowResize(uint32_t width, uint32_t height);
 
 		static void BeginScene(OrthographicCamera& camera);

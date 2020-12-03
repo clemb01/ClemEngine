@@ -4,7 +4,7 @@
 
 namespace ClemEngine
 {
-	class CLEMENGINE_API Input
+	class Input
 	{
 	protected:
 		Input() = default;

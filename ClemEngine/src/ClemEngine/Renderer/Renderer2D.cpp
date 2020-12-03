@@ -1,9 +1,9 @@
 #include "cepch.h"
 #include "Renderer2D.h"
 
-#include "VertexArray.h"
-#include "Shader.h"
-#include "RenderCommand.h"
+#include "ClemEngine/Renderer/VertexArray.h"
+#include "ClemEngine/Renderer/Shader.h"
+#include "ClemEngine/Renderer/RenderCommand.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -30,8 +30,7 @@ namespace ClemEngine
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		Ref<VertexBuffer> squareVB;
-		squareVB.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Ref<VertexBuffer> squareVB = VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ ClemEngine::ShaderDataType::Float3, "a_Position" },
@@ -41,8 +40,7 @@ namespace ClemEngine
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
 
-		Ref<IndexBuffer> squareIB;
-		squareIB.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Ref<IndexBuffer> squareIB = IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		s_Data->QuadVertexArray->SetIndexBuffer(squareIB);
 
 		s_Data->WhiteTexture = Texture2D::Create(1, 1);

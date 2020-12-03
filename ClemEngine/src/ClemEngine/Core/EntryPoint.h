@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ClemEngine/Core/Core.h"
+
 #ifdef CE_PLATFORM_WINDOWS
 
 extern ClemEngine::Application* ClemEngine::CreateApplication();
