@@ -129,6 +129,14 @@ ExampleLayer::ExampleLayer()
 	textureShader->SetInt("u_Texture", 0);
 }
 
+void ExampleLayer::OnAttach()
+{
+}
+
+void ExampleLayer::OnDetach()
+{
+}
+
 void ExampleLayer::OnUpdate(ClemEngine::Timestep ts)
 {
 	m_CameraController.OnUpdate(ts);
