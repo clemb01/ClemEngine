@@ -19,6 +19,8 @@ namespace ClemEngine
 
 	void ImGuiLayer::OnAttach()
 	{
+		CE_PROFILE_FUNCTION();
+
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
@@ -51,6 +53,8 @@ namespace ClemEngine
 
 	void ImGuiLayer::OnDetach()
 	{
+		CE_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -58,6 +62,8 @@ namespace ClemEngine
 
 	void ImGuiLayer::Begin()
 	{
+		CE_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -65,6 +71,8 @@ namespace ClemEngine
 
 	void ImGuiLayer::End()
 	{
+		CE_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());

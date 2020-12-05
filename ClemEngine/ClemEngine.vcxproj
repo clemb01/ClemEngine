@@ -156,6 +156,7 @@
     <ClInclude Include="src\ClemEngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\ClemEngine\Core\Timestep.h" />
     <ClInclude Include="src\ClemEngine\Core\Window.h" />
+    <ClInclude Include="src\ClemEngine\Debug\Instrumentor.h" />
     <ClInclude Include="src\ClemEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\ClemEngine\Events\Event.h" />
     <ClInclude Include="src\ClemEngine\Events\KeyEvent.h" />
@@ -636,4 +637,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project>
+</Project> 

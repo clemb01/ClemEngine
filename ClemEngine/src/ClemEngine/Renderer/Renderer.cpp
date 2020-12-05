@@ -9,6 +9,8 @@ namespace ClemEngine
 
 	void Renderer::Init()
 	{
+		CE_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

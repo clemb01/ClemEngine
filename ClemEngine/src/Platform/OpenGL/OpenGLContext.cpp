@@ -15,6 +15,8 @@ namespace ClemEngine
 
 	void OpenGLContext::Init()
 	{
+		CE_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		CE_CORE_ASSERT(status, "Failed to initialize Glad !");
@@ -36,6 +38,8 @@ namespace ClemEngine
 
 	void OpenGLContext::SwapBuffers()
 	{
+		CE_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 }

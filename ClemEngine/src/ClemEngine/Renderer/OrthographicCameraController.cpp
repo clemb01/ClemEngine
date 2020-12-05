@@ -13,6 +13,8 @@ namespace ClemEngine
 
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
+		CE_PROFILE_FUNCTION();
+
 		if (Input::IsKeyPressed(CE_KEY_LEFT) || Input::IsKeyPressed(CE_KEY_Q)) 
 		{
 			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
@@ -57,6 +59,8 @@ namespace ClemEngine
 
 	void OrthographicCameraController::OnEvent(Event& e)
 	{
+		CE_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<MouseScrolledEvent>(CE_BIND_EVENT_FN(OrthographicCameraController::OnMouseScrolled));
 		dispatcher.Dispatch<WindowResizeEvent>(CE_BIND_EVENT_FN(OrthographicCameraController::OnWindowResized));
@@ -64,6 +68,8 @@ namespace ClemEngine
 
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 	{
+		CE_PROFILE_FUNCTION();
+
 		m_ZoomLevel -= e.GetYOffset() * 0.25f;
 		m_ZoomLevel = std::max(m_ZoomLevel, 0.25f);
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
@@ -73,6 +79,8 @@ namespace ClemEngine
 
 	bool OrthographicCameraController::OnWindowResized(WindowResizeEvent& e)
 	{
+		CE_PROFILE_FUNCTION();
+
 		m_AspectRatio = (float)e.GetWidth() / (float)e.GetHeight();
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
 

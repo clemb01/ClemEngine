@@ -15,6 +15,8 @@ namespace ClemEngine
 
 	Application::Application()
 	{
+		CE_PROFILE_FUNCTION();
+
 		CE_CORE_ASSERT(!s_Instance, "Application already exist !");
 		s_Instance = this;
 
@@ -29,28 +31,38 @@ namespace ClemEngine
 
 	Application::~Application()
 	{
+		CE_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		CE_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
+		CE_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		CE_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(CE_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(CE_BIND_EVENT_FN(Application::OnWindowResize));
 
-		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 		{
-			(*--it)->OnEvent(e);
+			(*it)->OnEvent(e);
 			if (e.Handled)
 				break;
 		}
@@ -58,22 +70,34 @@ namespace ClemEngine
 
 	void Application::Run()
 	{
+		CE_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			CE_PROFILE_SCOPE("RunLoop");
+
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
+				{
+					CE_PROFILE_SCOPE("LayerStack OnUpdate");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
 			}
 
 			m_ImGuiLayer->Begin();
 
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
+			{
+				CE_PROFILE_SCOPE("LayerStack OnImGuiRender");
+
+				for (Layer* layer : m_LayerStack)
+					layer->OnImGuiRender();
+			}
 
 			m_ImGuiLayer->End();
 
@@ -88,6 +112,8 @@ namespace ClemEngine
 	}
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		CE_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;
