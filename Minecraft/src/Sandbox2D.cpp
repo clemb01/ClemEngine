@@ -37,9 +37,10 @@ void Sandbox2D::OnUpdate(ClemEngine::Timestep ts)
 	{
 		CE_PROFILE_SCOPE("Renderer Draw");
 		ClemEngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
-		ClemEngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 1.0f, 1.0f }, m_SquareColor);
-		ClemEngine::Renderer2D::DrawRotatedQuad({ 0.2f, 0.5f, -0.1f }, { 0.5f, 0.5f }, glm::radians(80.0f), m_CheckerboardTexture, 1.0f, glm::vec4(1.0f, 0.9f, 0.2f, 1.0f));
+		//ClemEngine::Renderer2D::DrawRotatedQuad({ -1.0f, 0.0f }, { 0.8f, 1.0f }, glm::radians(80.0f), { 0.8f, 0.2f, 0.3f, 1.0f });
+		ClemEngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+		ClemEngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
+		//ClemEngine::Renderer2D::DrawQuad({ 0.2f, 0.5f, -0.1f }, { 0.5f, 0.5f }, m_CheckerboardTexture, 1.0f);
 		ClemEngine::Renderer2D::EndScene();
 	}
 }
