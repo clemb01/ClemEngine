@@ -153,7 +153,7 @@
     <ClInclude Include="src\ClemEngine\Core\Layer.h" />
     <ClInclude Include="src\ClemEngine\Core\LayerStack.h" />
     <ClInclude Include="src\ClemEngine\Core\Log.h" />
-    <ClInclude Include="src\ClemEngine\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\ClemEngine\Core\MouseCodes.h" />
     <ClInclude Include="src\ClemEngine\Core\Timestep.h" />
     <ClInclude Include="src\ClemEngine\Core\Window.h" />
     <ClInclude Include="src\ClemEngine\Debug\Instrumentor.h" />
@@ -594,9 +594,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp" />
+    <ClCompile Include="src\ClemEngine\Core\Input.cpp" />
     <ClCompile Include="src\ClemEngine\Core\Layer.cpp" />
     <ClCompile Include="src\ClemEngine\Core\LayerStack.cpp" />
     <ClCompile Include="src\ClemEngine\Core\Log.cpp" />
+    <ClCompile Include="src\ClemEngine\Core\Window.cpp" />
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\ClemEngine\Renderer\Buffer.cpp" />
@@ -637,4 +639,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project> 
+</Project>

@@ -12,7 +12,7 @@
 
 #include "ClemEngine/Core/Input.h"
 #include "ClemEngine/Core/KeyCodes.h"
-#include "ClemEngine/Core/MouseButtonCodes.h"
+#include "ClemEngine/Core/MouseCodes.h"
 #include "ClemEngine/Renderer/OrthographicCameraController.h"
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"

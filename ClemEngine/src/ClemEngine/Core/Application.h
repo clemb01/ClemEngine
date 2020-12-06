@@ -11,6 +11,8 @@
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
+int main(int argc, char** argv);
+
 namespace ClemEngine 
 {
 	class Application
@@ -19,7 +21,6 @@ namespace ClemEngine
 		Application();
 		virtual ~Application();
 
-		void Run();
 		void OnEvent(Event& e);
 
 		void PushLayer(Layer* layer);
@@ -29,6 +30,7 @@ namespace ClemEngine
 		inline Window& GetWindow() { return *m_Window; }
 
 	private:
+		void Run();
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
 
@@ -41,6 +43,7 @@ namespace ClemEngine
 		Timestep m_Timestep;
 		float m_LastFrameTime = 0.0f;
 
+		friend int ::main(int argc, char** argv);
 		static Application* s_Instance;
 	};
 
