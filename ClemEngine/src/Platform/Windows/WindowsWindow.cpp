@@ -9,8 +9,8 @@
 
 #include "Platform/OpenGL/OpenGLContext.h"
 
-namespace ClemEngine {
-	
+namespace ClemEngine 
+{	
 	static uint8_t s_GLFWWindowCount = 0;
 
 	static void GLFWErrorCallback(int error, const char* description)
@@ -47,7 +47,7 @@ namespace ClemEngine {
 			CE_PROFILE_SCOPE("glfwInit");
 
 			int success = glfwInit();
-			CE_CORE_ASSERT(success, "Could not intialize GLFW!");
+			CE_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}
 

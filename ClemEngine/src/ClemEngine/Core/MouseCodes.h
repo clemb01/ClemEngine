@@ -20,7 +20,7 @@ namespace ClemEngine
 		ButtonMiddle = Button2
 	} Mouse;
 
-	inline std::ostream& operator<<(std::ostream& os, MouseCode mouseCode)
+	std::ostream& operator<<(std::ostream& os, MouseCode mouseCode)
 	{
 		os << static_cast<int32_t>(mouseCode);
 		return os;
