@@ -35,20 +35,16 @@ void Sandbox2D::OnUpdate(ClemEngine::Timestep ts)
 		ClemEngine::RenderCommand::Clear();
 	}
 	{
+		static float rotation = 0.0f;
+		rotation += ts * 50.0f;
+
 		CE_PROFILE_SCOPE("Renderer Draw");
 		ClemEngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
-		//ClemEngine::Renderer2D::DrawRotatedQuad({ -1.0f, 0.0f }, { 0.8f, 1.0f }, glm::radians(80.0f), { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 2.0f, 0.0f }, { 1.0f, 1.0f }, m_SquareColor);
-		ClemEngine::Renderer2D::DrawQuad({ 3.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 4.0f, 0.0f }, { 1.0f, 1.0f }, m_SquareColor);
-		ClemEngine::Renderer2D::DrawQuad({ 5.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 6.0f, 0.0f }, { 1.0f, 1.0f }, m_SquareColor);
-		ClemEngine::Renderer2D::DrawQuad({ 7.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 8.0f, 0.0f }, { 1.0f, 1.0f }, m_SquareColor);
-		ClemEngine::Renderer2D::DrawQuad({ 9.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-		ClemEngine::Renderer2D::DrawQuad({ 10.0f, 0.0f }, { 1.0f, 1.0f }, m_SquareColor);
-		ClemEngine::Renderer2D::DrawQuad({ -5.0f, -5.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture, 10.0f);
+		ClemEngine::Renderer2D::DrawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f }, rotation, { 0.8f, 0.2f, 0.3f, 1.0f });
+		ClemEngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+		ClemEngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
+		ClemEngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture, 10.0f);
+		ClemEngine::Renderer2D::DrawRotatedQuad({ -2.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }, rotation, m_CheckerboardTexture, 10.0f);
 		ClemEngine::Renderer2D::EndScene();
 	}
 }

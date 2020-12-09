@@ -136,7 +136,7 @@ namespace ClemEngine
 		Menu = 348
 	} Key;
 
-	std::ostream& operator<<(std::ostream& os, KeyCode keyCode)
+	inline std::ostream& operator<<(std::ostream& os, KeyCode keyCode)
 	{
 		os << static_cast<int32_t>(keyCode);
 		return os;
