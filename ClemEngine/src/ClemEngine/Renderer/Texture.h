@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "ClemEngine/Core/Core.h"
+#include "ClemEngine/Core/Base.h"
 
 namespace ClemEngine
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "cepch.h"
-#include "ClemEngine/Core/Core.h"
+#include "ClemEngine/Core/Base.h"
 
 namespace ClemEngine {
 

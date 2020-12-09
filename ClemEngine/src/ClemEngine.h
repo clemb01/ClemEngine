@@ -2,7 +2,7 @@
 
 // For use by Hazel applications
 
-#include "ClemEngine/Core/Core.h"
+#include "ClemEngine/Core/Base.h"
 
 #include "ClemEngine/Core/Application.h"
 #include "ClemEngine/Core/Layer.h"

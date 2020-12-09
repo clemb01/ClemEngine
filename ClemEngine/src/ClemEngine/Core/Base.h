@@ -44,7 +44,17 @@
 #endif // End of platform detection
 
 #ifdef CE_DEBUG
+	#if defined(CE_PLATFORM_WINDOWS)
+		#define CE_DEBUGBREAK() __debugbreak()
+	#elif defined(CE_PLATFORM_LINUX)
+		#include <signal.h>
+		#define CE_DEBUGBREAK() raise(SIGTRAP)
+	#else
+		#error "Platform doesn't support debugbreak yet!"
+#endif
 	#define CE_ENABLE_ASSERTS
+#else
+	#define CE_DEBUGBREAK()
 #endif
 
 #ifdef CE_ENABLE_ASSERTS

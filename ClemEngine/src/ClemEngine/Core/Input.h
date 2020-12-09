@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "ClemEngine/Core/Base.h"
 #include "ClemEngine/Core/KeyCodes.h"
 #include "ClemEngine/Core/MouseCodes.h"
 

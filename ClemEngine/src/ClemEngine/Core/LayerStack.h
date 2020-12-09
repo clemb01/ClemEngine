@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ClemEngine/Core/Core.h"
+#include "ClemEngine/Core/Base.h"
 #include "ClemEngine/Core/Layer.h"
 
 #include <vector>

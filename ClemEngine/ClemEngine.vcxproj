@@ -146,7 +146,7 @@
   <ItemGroup>
     <ClInclude Include="src\ClemEngine.h" />
     <ClInclude Include="src\ClemEngine\Core\Application.h" />
-    <ClInclude Include="src\ClemEngine\Core\Core.h" />
+    <ClInclude Include="src\ClemEngine\Core\Base.h" />
     <ClInclude Include="src\ClemEngine\Core\EntryPoint.h" />
     <ClInclude Include="src\ClemEngine\Core\Input.h" />
     <ClInclude Include="src\ClemEngine\Core\KeyCodes.h" />

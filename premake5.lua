@@ -53,6 +53,7 @@ project "ClemEngine"
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE",
 		"CE_KEYBOARD_AZERTY"
 	}
 
@@ -77,12 +78,6 @@ project "ClemEngine"
 
 	filter "system:windows"
 		systemversion "latest"
-
-		defines
-		{
-			"CE_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
-		}
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
