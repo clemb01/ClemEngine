@@ -266,7 +266,7 @@ namespace ClemEngine
 			FlushAndReset();
 
 		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-			* glm::rotate(glm::mat4(1.0f), glm::radians(rotation), { 0.0f, 0.0f, 1.f })
+			* glm::rotate(glm::mat4(1.0f), rotation, { 0.0f, 0.0f, 1.f })
 			* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
 
 		for (size_t i = 0; i < quadVertexCount; i++)
@@ -320,7 +320,7 @@ namespace ClemEngine
 		}
 
 		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-			* glm::rotate(glm::mat4(1.0f), glm::radians(rotation), { 0.0f, 0.0f, 1.f })
+			* glm::rotate(glm::mat4(1.0f), rotation, { 0.0f, 0.0f, 1.f })
 			* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
 
 		for (size_t i = 0; i < quadVertexCount; i++)
