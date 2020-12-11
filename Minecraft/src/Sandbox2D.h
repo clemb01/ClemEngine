@@ -24,6 +24,7 @@ private:
 	ClemEngine::Ref<ClemEngine::Shader> m_FlatColorShader;
 
 	ClemEngine::Ref<ClemEngine::Texture2D> m_CheckerboardTexture;
+	ClemEngine::Ref<ClemEngine::Texture2D> m_SpriteSheet;
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 

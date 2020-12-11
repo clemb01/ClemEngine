@@ -15,6 +15,7 @@ void Sandbox2D::OnAttach()
 	CE_PROFILE_FUNCTION();
 
 	m_CheckerboardTexture = ClemEngine::Texture2D::Create("assets/textures/Checkerboard.png");
+	m_SpriteSheet = ClemEngine::Texture2D::Create("assets/game/textures/RPGpack_sheet_2X.png");
 
 	m_Particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
 	m_Particle.ColorEnd = { 254 / 255.0f, 109 / 255.0f, 41 / 255.0f, 1.0f };
@@ -43,6 +44,8 @@ void Sandbox2D::OnUpdate(ClemEngine::Timestep ts)
 		ClemEngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		ClemEngine::RenderCommand::Clear();
 	}
+
+#if 0
 	{
 		static float rotation = 0.0f;
 		rotation += ts * 50.0f;
@@ -67,6 +70,7 @@ void Sandbox2D::OnUpdate(ClemEngine::Timestep ts)
 		}
 		ClemEngine::Renderer2D::EndScene();
 	}
+#endif
 
 	if (ClemEngine::Input::IsMouseButtonPressed(CE_MOUSE_BUTTON_LEFT))
 	{
@@ -82,6 +86,10 @@ void Sandbox2D::OnUpdate(ClemEngine::Timestep ts)
 		for (int i = 0; i < 5; i++)
 			m_ParticleSystem.Emit(m_Particle);
 	}
+
+	ClemEngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
+	ClemEngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, m_SpriteSheet, 1.0f);
+	ClemEngine::Renderer2D::EndScene();
 
 	m_ParticleSystem.OnUpdate(ts);
 	m_ParticleSystem.OnRender(m_CameraController.GetCamera());
