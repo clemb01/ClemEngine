@@ -17,6 +17,10 @@ void Sandbox2D::OnAttach()
 	m_CheckerboardTexture = ClemEngine::Texture2D::Create("assets/textures/Checkerboard.png");
 	m_SpriteSheet = ClemEngine::Texture2D::Create("assets/game/textures/RPGpack_sheet_2X.png");
 
+	m_TextureStairs = ClemEngine::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 7.0f, 6.0f }, { 128.0f, 128.0f });
+	m_TextureBarrel = ClemEngine::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 8.0f, 2.0f }, { 128.0f, 128.0f });
+	m_TextureTree = ClemEngine::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 2.0f, 1.0f }, { 128.0f, 128.0f }, { 1.0f, 2.0f });
+
 	m_Particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
 	m_Particle.ColorEnd = { 254 / 255.0f, 109 / 255.0f, 41 / 255.0f, 1.0f };
 	m_Particle.SizeBegin = 0.5f, m_Particle.SizeVariation = 0.3f, m_Particle.SizeEnd = 0.0f;
@@ -88,11 +92,13 @@ void Sandbox2D::OnUpdate(ClemEngine::Timestep ts)
 	}
 
 	ClemEngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
-	ClemEngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, m_SpriteSheet, 1.0f);
+	ClemEngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, m_TextureStairs, 1.0f, m_TintColor);
+	ClemEngine::Renderer2D::DrawQuad({ 1.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, m_TextureBarrel);
+	ClemEngine::Renderer2D::DrawQuad({ -1.0f, 0.0f, 0.1f }, { 1.0f, 2.0f }, m_TextureTree);
 	ClemEngine::Renderer2D::EndScene();
 
-	m_ParticleSystem.OnUpdate(ts);
-	m_ParticleSystem.OnRender(m_CameraController.GetCamera());
+	//m_ParticleSystem.OnUpdate(ts);
+	//m_ParticleSystem.OnRender(m_CameraController.GetCamera());
 }
 
 void Sandbox2D::OnImGuiRender()
@@ -108,7 +114,7 @@ void Sandbox2D::OnImGuiRender()
 	ImGui::Text("Vertices %d", stats.GetTotalVertexCount());
 	ImGui::Text("Indices %d", stats.GetTotalIndexCount());
 
-	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_TintColor));
 	ImGui::End();
 }
 

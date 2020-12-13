@@ -25,8 +25,9 @@ private:
 
 	ClemEngine::Ref<ClemEngine::Texture2D> m_CheckerboardTexture;
 	ClemEngine::Ref<ClemEngine::Texture2D> m_SpriteSheet;
+	ClemEngine::Ref<ClemEngine::SubTexture2D> m_TextureStairs, m_TextureBarrel, m_TextureTree;
 
-	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+	glm::vec4 m_TintColor = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	ParticleSystem m_ParticleSystem;
 	ParticleProps m_Particle;

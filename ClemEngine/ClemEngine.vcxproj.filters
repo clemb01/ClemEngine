@@ -63,6 +63,9 @@
     <ClInclude Include="src\ClemEngine\Core\Application.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\Base.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Core\EntryPoint.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
@@ -79,6 +82,9 @@
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Core\Log.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\MouseCodes.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Core\Timestep.h">
@@ -130,6 +136,9 @@
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Shader.h">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Renderer\SubTexture2D.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Texture.h">
@@ -1392,15 +1401,12 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Core\MouseCodes.h">
-      <Filter>src\ClemEngine\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ClemEngine\Core\Base.h">
-      <Filter>src\ClemEngine\Core</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Core\Input.cpp">
       <Filter>src\ClemEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Core\Layer.cpp">
@@ -1410,6 +1416,9 @@
       <Filter>src\ClemEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Core\Log.cpp">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Core\Window.cpp">
       <Filter>src\ClemEngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiBuild.cpp">
@@ -1443,6 +1452,9 @@
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\Shader.cpp">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Renderer\SubTexture2D.cpp">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\Texture.cpp">
@@ -1481,7 +1493,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\Core\Input.cpp" />
-    <ClCompile Include="src\ClemEngine\Core\Window.cpp" />
   </ItemGroup>
 </Project>

@@ -25,6 +25,7 @@
 #include "ClemEngine/Renderer/Buffer.h"
 #include "ClemEngine/Renderer/Shader.h"
 #include "ClemEngine/Renderer/Texture.h"
+#include "ClemEngine/Renderer/SubTexture2D.h"
 #include "ClemEngine/Renderer/VertexArray.h"
 
 #include "ClemEngine/Renderer/OrthographicCamera.h"
