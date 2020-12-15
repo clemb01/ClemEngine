@@ -29,17 +29,19 @@ namespace ClemEngine
 		const OrthographicCamera& GetCamera() const { return m_Camera; }
 
 		float GetZoomLevel() const { return m_ZoomLevel; }
-		void SetZoomLevel(float level) { m_ZoomLevel = level; }
+		void SetZoomLevel(float level) { m_ZoomLevel = level; CalculateView(); }
 
 		const OrthographicCameraBounds& GetBounds() const { return m_Bounds; }
 
 	private:
+		void CalculateView();
+
 		bool OnMouseScrolled(MouseScrolledEvent& e);
 		bool OnWindowResized(WindowResizeEvent& e);
 
 	private:
 		float m_AspectRatio;
-		float m_ZoomLevel = 1.0f;
+		float m_ZoomLevel = 5.0f;
 		OrthographicCameraBounds m_Bounds;
 		OrthographicCamera m_Camera;
 
