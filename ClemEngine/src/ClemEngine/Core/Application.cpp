@@ -68,6 +68,11 @@ namespace ClemEngine
 		}
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::Run()
 	{
 		CE_PROFILE_FUNCTION();
