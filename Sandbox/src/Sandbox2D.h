@@ -22,7 +22,6 @@ private:
 	
 	ClemEngine::Ref<ClemEngine::VertexArray> m_SquareVA;
 	ClemEngine::Ref<ClemEngine::Shader> m_FlatColorShader;
-	ClemEngine::Ref<ClemEngine::Framebuffer> m_Framebuffer;
 
 	ClemEngine::Ref<ClemEngine::Texture2D> m_CheckerboardTexture;
 

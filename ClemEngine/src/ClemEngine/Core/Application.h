@@ -18,7 +18,7 @@ namespace ClemEngine
 	class Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "ClemEngine App");
 		virtual ~Application();
 
 		void OnEvent(Event& e);

@@ -9,21 +9,21 @@
 #include "Sandbox2D.h"
 #include "ExampleLayer.h"
 
-class MinecraftApp : public ClemEngine::Application
+class SandboxApp : public ClemEngine::Application
 {
 public:
-	MinecraftApp()
+	SandboxApp()
 	{
 		//PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
 	}
 
-	~MinecraftApp()
+	~SandboxApp()
 	{
 	}
 };
 
 ClemEngine::Application* ClemEngine::CreateApplication()
 {
-	return new MinecraftApp();
+	return new SandboxApp();
 }

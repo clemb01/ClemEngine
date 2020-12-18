@@ -1,6 +1,6 @@
 workspace "ClemEngine"
 	architecture "x86_64"
-	startproject "Minecraft"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -23,9 +23,11 @@ IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
 IncludeDir["glm"] = "ClemEngine/vendor/glm"
 IncludeDir["stb_image"] = "ClemEngine/vendor/stb_image"
 
-include "ClemEngine/vendor/GLFW"
-include "ClemEngine/vendor/Glad"
-include "ClemEngine/vendor/imgui"
+group "Dependencies"
+	include "ClemEngine/vendor/GLFW"
+	include "ClemEngine/vendor/Glad"
+	include "ClemEngine/vendor/imgui"
+group ""
 
 project "ClemEngine"
 	location "ClemEngine"
@@ -94,8 +96,60 @@ project "ClemEngine"
 		runtime "Release"
 		optimize "on"
 
-project "Minecraft"
-	location "Minecraft"
+project "Sandbox"
+	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"ClemEngine/vendor/spdlog/include",
+		"ClemEngine/src",
+		"ClemEngine/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"ClemEngine"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+		defines
+		{
+			"CE_KEYBOARD_AZERTY"
+		}		
+
+	filter "configurations:Debug"
+		defines "CE_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "CE_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "CE_DIST"
+		runtime "Release"
+		optimize "on"
+
+project "ClemEngine-Editor"
+	location "ClemEngine-Editor"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
