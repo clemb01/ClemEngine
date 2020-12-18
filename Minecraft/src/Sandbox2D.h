@@ -22,16 +22,9 @@ private:
 	
 	ClemEngine::Ref<ClemEngine::VertexArray> m_SquareVA;
 	ClemEngine::Ref<ClemEngine::Shader> m_FlatColorShader;
+	ClemEngine::Ref<ClemEngine::Framebuffer> m_Framebuffer;
 
 	ClemEngine::Ref<ClemEngine::Texture2D> m_CheckerboardTexture;
-	ClemEngine::Ref<ClemEngine::Texture2D> m_SpriteSheet;
-	ClemEngine::Ref<ClemEngine::SubTexture2D> m_TextureStairs, m_TextureBarrel, m_TextureTree;
 
 	glm::vec4 m_TintColor = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-	ParticleSystem m_ParticleSystem;
-	ParticleProps m_Particle;
-
-	uint32_t m_MapWidth, m_MapHeight;
-	std::unordered_map<char, ClemEngine::Ref<ClemEngine::SubTexture2D>> s_TextureMap;
 };
