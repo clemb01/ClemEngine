@@ -21,7 +21,7 @@
 		#error "IOS simulator is not supported!"
 	#elif TARGET_OS_IPHONE == 1
 		#define CE_PLATFORM_IOS
-	#error "IOS is not supported!"
+		#error "IOS is not supported!"
 	#elif TARGET_OS_MAC == 1
 		#define CE_PLATFORM_MACOS
 		#error "MacOS is not supported!"
@@ -29,15 +29,15 @@
 		#define CLEMENGINE_API __declspec(dllimport)
 		#error "Unknown Apple platform!"
 	#endif
-	 /* We also have to check __ANDROID__ before __linux__
-	  * since android is based on the linux kernel
-	  * it has __linux__ defined */
-	#elif defined(__ANDROID__)
-		#define CE_PLATFORM_ANDROID
-		#error "Android is not supported!"
-	#elif defined(__linux__)
-		#define CE_PLATFORM_LINUX
-		#error "Linux is not supported!"
+/* We also have to check __ANDROID__ before __linux__
+ * since android is based on the linux kernel
+ * it has __linux__ defined */
+#elif defined(__ANDROID__)
+	#define CE_PLATFORM_ANDROID
+	#error "Android is not supported!"
+#elif defined(__linux__)
+	#define CE_PLATFORM_LINUX
+	#error "Linux is not supported!"
 #else
 /* Unknown compiler/platform */
 	#error "Unknown platform!"
