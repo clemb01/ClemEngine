@@ -35,7 +35,8 @@ namespace ClemEngine
 	{
 		CE_PROFILE_FUNCTION();
 
-		m_CameraController.OnUpdate(ts);
+		if(m_ViewportFocused)
+			m_CameraController.OnUpdate(ts);
 
 		ClemEngine::Renderer2D::ResetStats();
 		{
@@ -155,6 +156,11 @@ namespace ClemEngine
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0.0f, 0.0f });
 		ImGui::Begin("Viewport");
+
+		m_ViewportFocused = ImGui::IsWindowFocused();
+		m_ViewportHovered = ImGui::IsWindowHovered();
+		Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused || !m_ViewportHovered);
+
 		ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 		if (m_ViewportSize != *((glm::vec2*)&viewportPanelSize))
 		{
