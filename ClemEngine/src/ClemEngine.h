@@ -17,6 +17,9 @@
 
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
+#include "ClemEngine/Scene/Scene.h"
+#include "ClemEngine/Scene/Components.h"
+
 // ---Renderer------------------------
 #include "ClemEngine/Renderer/Renderer.h"
 #include "ClemEngine/Renderer/Renderer2D.h"

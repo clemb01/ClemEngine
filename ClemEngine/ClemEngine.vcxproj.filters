@@ -1404,6 +1404,8 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Scene\Scene.h" />
+    <ClInclude Include="src\ClemEngine\Scene\Components.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
@@ -1499,5 +1501,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Scene\Scene.cpp" />
   </ItemGroup>
 </Project>

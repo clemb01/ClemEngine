@@ -22,6 +22,7 @@ IncludeDir["Glad"] = "ClemEngine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
 IncludeDir["glm"] = "ClemEngine/vendor/glm"
 IncludeDir["stb_image"] = "ClemEngine/vendor/stb_image"
+IncludeDir["entt"] = "ClemEngine/vendor/entt/include"
 
 group "Dependencies"
 	include "ClemEngine/vendor/GLFW"
@@ -67,7 +68,8 @@ project "ClemEngine"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 	
 	links
@@ -169,7 +171,8 @@ project "ClemEngine-Editor"
 		"ClemEngine/vendor/spdlog/include",
 		"ClemEngine/src",
 		"ClemEngine/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
