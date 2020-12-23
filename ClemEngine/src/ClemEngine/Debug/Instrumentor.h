@@ -27,15 +27,9 @@ namespace ClemEngine
 
     class Instrumentor
     {
-    private:
-        std::mutex m_Mutex;
-        InstrumentationSession* m_CurrentSession;
-        std::ofstream m_OutputStream;
     public:
-        Instrumentor()
-            : m_CurrentSession(nullptr)
-        {
-        }
+        Instrumentor(const Instrumentor&) = delete;
+        Instrumentor(Instrumentor&&) = delete;
 
         void BeginSession(const std::string& name, const std::string& filepath = "results.json")
         {
@@ -103,6 +97,16 @@ namespace ClemEngine
         }
 
     private:
+        Instrumentor()
+            : m_CurrentSession(nullptr)
+        {
+        }
+
+        ~Instrumentor()
+        {
+            EndSession();
+        }
+
         void WriteHeader()
         {
             m_OutputStream << "{\"otherData\": {},\"traceEvents\":[{}";
@@ -127,6 +131,11 @@ namespace ClemEngine
                 m_CurrentSession = nullptr;
             }
         }
+
+    private:
+        std::mutex m_Mutex;
+        InstrumentationSession* m_CurrentSession;
+        std::ofstream m_OutputStream;
     };
 
     class InstrumentationTimer
@@ -215,8 +224,10 @@ namespace InstrumentorUtils
 
     #define CE_PROFILE_BEGIN_SESSION(name, filepath) ::ClemEngine::Instrumentor::Get().BeginSession(name, filepath)
     #define CE_PROFILE_END_SESSION() ::ClemEngine::Instrumentor::Get().EndSession()
-    #define CE_PROFILE_SCOPE(name) constexpr auto fixedName = ::ClemEngine::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
-									                            ::ClemEngine::InstrumentationTimer timer##__LINE__(fixedName.Data)
+    #define CE_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName## = ::ClemEngine::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
+									                            ::ClemEngine::InstrumentationTimer timer##line(fixedName##line.Data)
+    #define CE_PROFILE_SCOPE_LINE(name, line) CE_PROFILE_SCOPE_LINE2(name, line)
+    #define CE_PROFILE_SCOPE(name) CE_PROFILE_SCOPE_LINE(name, __LINE__)
     #define CE_PROFILE_FUNCTION() CE_PROFILE_SCOPE(CE_FUNC_SIG)
 #else
     #define CE_PROFILE_BEGIN_SESSION(name, filepath)

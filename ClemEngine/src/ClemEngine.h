@@ -18,6 +18,7 @@
 #include "ClemEngine/ImGui/ImGuiLayer.h"
 
 #include "ClemEngine/Scene/Scene.h"
+#include "ClemEngine/Scene/Entity.h"
 #include "ClemEngine/Scene/Components.h"
 
 // ---Renderer------------------------
