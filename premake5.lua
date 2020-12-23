@@ -119,7 +119,8 @@ project "Sandbox"
 		"ClemEngine/vendor/spdlog/include",
 		"ClemEngine/src",
 		"ClemEngine/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
