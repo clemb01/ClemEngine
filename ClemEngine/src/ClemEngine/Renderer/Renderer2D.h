@@ -5,6 +5,8 @@
 #include "ClemEngine/Renderer/Texture.h"
 #include "ClemEngine/Renderer/SubTexture2D.h"
 
+#include "ClemEngine/Renderer/Camera.h"
+
 namespace ClemEngine
 {
 	class Renderer2D
@@ -13,6 +15,7 @@ namespace ClemEngine
 		static void Init();
 		static void Shutdown();
 
+		static void BeginScene(const Camera& camera, const glm::mat4& transform);
 		static void BeginScene(const OrthographicCamera& camera);
 		static void EndScene();
 		static void Flush();
