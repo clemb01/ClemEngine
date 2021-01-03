@@ -25,7 +25,7 @@ namespace ClemEngine
 		Semicolon = 59, /* ; */
 		Equal = 61, /* = */
 
-		A = 65,
+		A = 87, //65,
 		B = 66,
 		C = 67,
 		D = 68,
@@ -41,16 +41,16 @@ namespace ClemEngine
 		N = 78,
 		O = 79,
 		P = 80,
-		Q = 81,
+		Q = 65, //81,
 		R = 82,
 		S = 83,
 		T = 84,
 		U = 85,
 		V = 86,
-		W = 87,
+		W = 90, //87,
 		X = 88,
 		Y = 89,
-		Z = 90,
+		Z = 87, //90,
 
 		LeftBracket = 91,  /* [ */
 		Backslash = 92,  /* \ */

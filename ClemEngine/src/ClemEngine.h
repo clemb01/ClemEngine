@@ -19,6 +19,7 @@
 
 #include "ClemEngine/Scene/Scene.h"
 #include "ClemEngine/Scene/Entity.h"
+#include "ClemEngine/Scene/ScriptableEntity.h"
 #include "ClemEngine/Scene/Components.h"
 
 // ---Renderer------------------------

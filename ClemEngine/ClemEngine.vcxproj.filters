@@ -1416,6 +1416,7 @@
     <ClInclude Include="src\ClemEngine\Scene\Entity.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Camera.h" />
     <ClInclude Include="src\ClemEngine\Scene\SceneCamera.h" />
+    <ClInclude Include="src\ClemEngine\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
