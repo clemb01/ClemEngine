@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ClemEngine.h"
+#include "Panels/SceneHierarchyPanel.h"
 
 namespace ClemEngine
 {
@@ -38,5 +39,7 @@ namespace ClemEngine
 		glm::vec2 m_ViewportSize = { 0.0f, 0.0f };
 
 		glm::vec4 m_TintColor = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+		SceneHierarchyPanel m_SceneHierarchyPanel;
 	};
 }
