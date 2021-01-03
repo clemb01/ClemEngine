@@ -145,7 +145,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\ClemEngine.h" />
-    <ClInclude Include="src\ClemEngine\Renderer\Camera.h" />
     <ClInclude Include="src\ClemEngine\Core\Application.h" />
     <ClInclude Include="src\ClemEngine\Core\Base.h" />
     <ClInclude Include="src\ClemEngine\Core\EntryPoint.h" />
@@ -155,6 +154,7 @@
     <ClInclude Include="src\ClemEngine\Core\LayerStack.h" />
     <ClInclude Include="src\ClemEngine\Core\Log.h" />
     <ClInclude Include="src\ClemEngine\Core\MouseCodes.h" />
+    <ClInclude Include="src\ClemEngine\Core\PlatformDetection.h" />
     <ClInclude Include="src\ClemEngine\Core\Timestep.h" />
     <ClInclude Include="src\ClemEngine\Core\Window.h" />
     <ClInclude Include="src\ClemEngine\Debug\Instrumentor.h" />
@@ -164,6 +164,7 @@
     <ClInclude Include="src\ClemEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\ClemEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\ClemEngine\Renderer\Camera.h" />
     <ClInclude Include="src\ClemEngine\Renderer\Framebuffer.h" />
     <ClInclude Include="src\ClemEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\ClemEngine\Renderer\OrthographicCamera.h" />

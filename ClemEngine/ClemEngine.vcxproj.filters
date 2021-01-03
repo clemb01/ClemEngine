@@ -90,6 +90,9 @@
     <ClInclude Include="src\ClemEngine\Core\MouseCodes.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\PlatformDetection.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Core\Timestep.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
@@ -115,6 +118,9 @@
       <Filter>src\ClemEngine\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Buffer.h">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Renderer\Camera.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Framebuffer.h">
@@ -156,7 +162,16 @@
     <ClInclude Include="src\ClemEngine\Scene\Components.h">
       <Filter>src\ClemEngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Scene\Entity.h">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Scene\Scene.h">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Scene\SceneCamera.h">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Scene\ScriptableEntity.h">
       <Filter>src\ClemEngine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
@@ -1413,10 +1428,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Scene\Entity.h" />
-    <ClInclude Include="src\ClemEngine\Renderer\Camera.h" />
-    <ClInclude Include="src\ClemEngine\Scene\SceneCamera.h" />
-    <ClInclude Include="src\ClemEngine\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
@@ -1479,7 +1490,13 @@
     <ClCompile Include="src\ClemEngine\Renderer\VertexArray.cpp">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Scene\Entity.cpp">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\ClemEngine\Scene\Scene.cpp">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Scene\SceneCamera.cpp">
       <Filter>src\ClemEngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1515,7 +1532,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\Scene\Entity.cpp" />
-    <ClCompile Include="src\ClemEngine\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>

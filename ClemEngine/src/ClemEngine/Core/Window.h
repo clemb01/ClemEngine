@@ -1,6 +1,6 @@
 #pragma once
 
-#include "cepch.h"
+#include <sstream>
 
 #include "ClemEngine/Core/Base.h"
 #include "ClemEngine/Events/Event.h"

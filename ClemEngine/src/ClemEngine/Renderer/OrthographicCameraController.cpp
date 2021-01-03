@@ -15,23 +15,23 @@ namespace ClemEngine
 	{
 		CE_PROFILE_FUNCTION();
 
-		if (Input::IsKeyPressed(CE_KEY_LEFT) || Input::IsKeyPressed(CE_KEY_Q)) 
+		if (Input::IsKeyPressed(Key::Left) || Input::IsKeyPressed(Key::Q)) 
 		{
 			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 			m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
-		else if (ClemEngine::Input::IsKeyPressed(CE_KEY_RIGHT) || ClemEngine::Input::IsKeyPressed(CE_KEY_D))
+		else if (ClemEngine::Input::IsKeyPressed(Key::Right) || ClemEngine::Input::IsKeyPressed(Key::D))
 		{
 			m_CameraPosition.x += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 			m_CameraPosition.y += sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
 
-		if (Input::IsKeyPressed(CE_KEY_UP) || Input::IsKeyPressed(CE_KEY_Z))
+		if (Input::IsKeyPressed(Key::Up) || Input::IsKeyPressed(Key::Z))
 		{
 			m_CameraPosition.x += -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 			m_CameraPosition.y += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
-		else if (Input::IsKeyPressed(CE_KEY_DOWN) || Input::IsKeyPressed(CE_KEY_S))
+		else if (Input::IsKeyPressed(Key::Down) || Input::IsKeyPressed(Key::S))
 		{
 			m_CameraPosition.x -= -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 			m_CameraPosition.y -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
@@ -39,9 +39,9 @@ namespace ClemEngine
 
 		if (m_Rotation)
 		{
-			if (Input::IsKeyPressed(CE_KEY_A))
+			if (Input::IsKeyPressed(Key::A))
 				m_CameraRotation += m_CameraRotationSpeed * ts;
-			else if (Input::IsKeyPressed(CE_KEY_E))
+			else if (Input::IsKeyPressed(Key::E))
 				m_CameraRotation -= m_CameraRotationSpeed * ts;
 
 			if (m_CameraRotation > 180.0f)

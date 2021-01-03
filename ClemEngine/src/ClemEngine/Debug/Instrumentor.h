@@ -5,8 +5,11 @@
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
-
+#include <mutex>
 #include <thread>
+#include <sstream>
+
+#include "ClemEngine/Core/Log.h"
 
 namespace ClemEngine
 {

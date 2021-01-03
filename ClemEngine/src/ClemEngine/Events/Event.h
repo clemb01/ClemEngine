@@ -1,6 +1,8 @@
 #pragma once
 
-#include "cepch.h"
+#include <functional>
+
+#include "ClemEngine/Debug/Instrumentor.h"
 #include "ClemEngine/Core/Base.h"
 
 namespace ClemEngine {
