@@ -8,7 +8,7 @@ namespace ClemEngine
 	class VertexArray
 	{
 	public:
-		virtual ~VertexArray() {}
+		virtual ~VertexArray() = default;
 
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
