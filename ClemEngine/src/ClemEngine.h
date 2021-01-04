@@ -7,6 +7,7 @@
 #include "ClemEngine/Core/Application.h"
 #include "ClemEngine/Core/Layer.h"
 #include "ClemEngine/Core/Log.h"
+#include "ClemEngine/Core/Assert.h"
 
 #include "ClemEngine/Core/TimeStep.h"
 

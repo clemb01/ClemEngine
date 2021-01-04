@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ClemEngine/Core/Base.h"
-#include "ClemEngine/Core/Log.h"
 #include "ClemEngine/Scene/Scene.h"
 #include "ClemEngine/Scene/Entity.h"
 
