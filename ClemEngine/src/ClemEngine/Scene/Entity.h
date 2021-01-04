@@ -40,9 +40,6 @@ namespace ClemEngine
 			m_Scene->m_Registry.remove<T>(m_EntityHandle);
 		}
 
-		void Selected() { m_Selected = !m_Selected; }
-		bool& IsSelected() { return m_Selected; }
-
 		operator bool() const { return m_EntityHandle != entt::null; }
 		operator uint32_t() const { return (uint32_t)m_EntityHandle; }
 
@@ -59,6 +56,5 @@ namespace ClemEngine
 	private:
 		entt::entity m_EntityHandle{ entt::null };
 		Scene* m_Scene = nullptr;
-		bool m_Selected = false;
 	};
 }
