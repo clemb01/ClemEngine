@@ -23,11 +23,13 @@ IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
 IncludeDir["glm"] = "ClemEngine/vendor/glm"
 IncludeDir["stb_image"] = "ClemEngine/vendor/stb_image"
 IncludeDir["entt"] = "ClemEngine/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "ClemEngine/vendor/yaml-cpp/include"
 
 group "Dependencies"
 	include "ClemEngine/vendor/GLFW"
 	include "ClemEngine/vendor/Glad"
 	include "ClemEngine/vendor/imgui"
+	include "ClemEngine/vendor/yaml-cpp"
 group ""
 
 project "ClemEngine"
@@ -69,7 +71,8 @@ project "ClemEngine"
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 	}
 	
 	links
@@ -77,6 +80,7 @@ project "ClemEngine"
 		"GLFW",
 		"Glad",
 		"ImGui",
+		"yaml-cpp",
 		"opengl32.lib"
 	}
 

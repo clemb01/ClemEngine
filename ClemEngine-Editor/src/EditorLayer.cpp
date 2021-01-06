@@ -5,6 +5,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "ClemEngine/Scene/SceneSerializer.h"
+
 namespace ClemEngine
 {
 	EditorLayer::EditorLayer()
@@ -25,6 +27,7 @@ namespace ClemEngine
 
 		m_ActiveScene = CreateRef<Scene>();
 
+#if 0
 		auto greenSquare = m_ActiveScene->CreateEntity("Green Square");
 		greenSquare.AddComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 
@@ -71,6 +74,7 @@ namespace ClemEngine
 
 		m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
 		m_SecondCamera.AddComponent<NativeScriptComponent>().Bind<CameraController>();
+#endif
 
 		m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 	}
@@ -169,7 +173,19 @@ namespace ClemEngine
 				// Disabling fullscreen would allow the window to be moved to the front of other windows,
 				// which we can't undo at the moment without finer window depth/z control.
 
-				if (ImGui::MenuItem("Close")) { Application::Get().Close(); }
+				if (ImGui::MenuItem("Serialize"))
+				{
+					SceneSerializer serializer(m_ActiveScene);
+					serializer.Serialize("assets/scenes/Example.clemengine");
+				}
+
+				if (ImGui::MenuItem("Deserialize"))
+				{
+					SceneSerializer serializer(m_ActiveScene);
+					serializer.Deserialize("assets/scenes/Example.clemengine");
+				}
+
+				if (ImGui::MenuItem("Close")) Application::Get().Close();
 				ImGui::EndMenu();
 			}
 

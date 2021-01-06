@@ -66,6 +66,9 @@
     <ClInclude Include="src\ClemEngine\Core\Application.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Core\Assert.h">
+      <Filter>src\ClemEngine\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Core\Base.h">
       <Filter>src\ClemEngine\Core</Filter>
     </ClInclude>
@@ -1428,7 +1431,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Core\Assert.h" />
+    <ClInclude Include="src\ClemEngine\Scene\SceneSerializer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
@@ -1533,5 +1536,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Scene\SceneSerializer.cpp" />
   </ItemGroup>
 </Project>
