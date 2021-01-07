@@ -19,6 +19,13 @@ namespace ClemEngine
 		void OnEvent(Event& e) override;
 
 	private:
+		bool OnKeyPressed(KeyPressedEvent& e);
+
+		void NewScene();
+		void SaveSceneAs();
+		void OpenScene();
+
+	private:
 		OrthographicCameraController m_CameraController;
 
 		Ref<VertexArray> m_SquareVA;

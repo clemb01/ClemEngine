@@ -13,8 +13,8 @@ Entities:
     TagComponent:
       Tag: Red Square
     TransformComponent:
-      Translation: [2.4000001, 0, 0]
-      Rotation: [0, 0, 0]
+      Translation: [-10.5, 1.20000005, 0]
+      Rotation: [0.55501467, 0.958185792, 0]
       Scale: [1, 1, 1]
     SpriteRendererComponent:
       Color: [1, 0, 0, 1]
@@ -22,12 +22,12 @@ Entities:
     TagComponent:
       Tag: Camera A
     TransformComponent:
-      Translation: [0, 0, 0]
-      Rotation: [0, 0, 0]
+      Translation: [0, 0, 26.1000004]
+      Rotation: [0, 0.151843637, 0]
       Scale: [1, 1, 1]
     CameraComponent:
       Camera:
-        ProjectionType: 1
+        ProjectionType: 0
         PerspectiveFOV: 0.785398185
         PerspectiveNear: 0.00999999978
         PerspectiveFar: 1000
