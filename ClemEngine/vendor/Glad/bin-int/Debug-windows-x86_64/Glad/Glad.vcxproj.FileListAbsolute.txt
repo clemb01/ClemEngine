@@ -2,3 +2,5 @@ C:\Users\cleme\source\repos\Minecraft\ClemEngine\vendor\Glad\bin\Debug-windows-x
 C:\Users\cleme\source\repos\Minecraft\ClemEngine\vendor\Glad\bin-int\Debug-windows-x86_64\Glad\Glad.pdb
 G:\Dev\C++\Minecraft\ClemEngine\vendor\Glad\bin\Debug-windows-x86_64\Glad\Glad.pdb
 G:\Dev\C++\Minecraft\ClemEngine\vendor\Glad\bin-int\Debug-windows-x86_64\Glad\Glad.pdb
+G:\Dev\C++\ClemEngine\ClemEngine\vendor\Glad\bin\Debug-windows-x86_64\Glad\Glad.pdb
+G:\Dev\C++\ClemEngine\ClemEngine\vendor\Glad\bin-int\Debug-windows-x86_64\Glad\Glad.pdb

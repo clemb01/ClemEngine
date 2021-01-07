@@ -1,6 +1,6 @@
 workspace "ClemEngine"
 	architecture "x86_64"
-	startproject "Sandbox"
+	startproject "ClemEngine-Editor"
 
 	configurations
 	{

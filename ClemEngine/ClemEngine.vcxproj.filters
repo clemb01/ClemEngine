@@ -25,6 +25,9 @@
     <Filter Include="src\ClemEngine\Scene">
       <UniqueIdentifier>{703186A2-5CC0-0F6C-05DF-2367F14C2012}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ClemEngine\Utils">
+      <UniqueIdentifier>{B3C5B3A2-9F54-3D6C-4873-516734E14D12}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -174,8 +177,14 @@
     <ClInclude Include="src\ClemEngine\Scene\SceneCamera.h">
       <Filter>src\ClemEngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Scene\SceneSerializer.h">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Scene\ScriptableEntity.h">
       <Filter>src\ClemEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Utils\PlatformUtils.h">
+      <Filter>src\ClemEngine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -567,6 +576,12 @@
     <ClInclude Include="vendor\glm\glm\ext\matrix_int4x4_sized.hpp">
       <Filter>vendor\glm\glm\ext</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\glm\glm\ext\matrix_integer.hpp">
+      <Filter>vendor\glm\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glm\glm\ext\matrix_integer.inl">
+      <Filter>vendor\glm\glm\ext</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\glm\glm\ext\matrix_projection.hpp">
       <Filter>vendor\glm\glm\ext</Filter>
     </ClInclude>
@@ -717,6 +732,12 @@
     <ClInclude Include="vendor\glm\glm\ext\scalar_packing.inl">
       <Filter>vendor\glm\glm\ext</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\glm\glm\ext\scalar_reciprocal.hpp">
+      <Filter>vendor\glm\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glm\glm\ext\scalar_reciprocal.inl">
+      <Filter>vendor\glm\glm\ext</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\glm\glm\ext\scalar_relational.hpp">
       <Filter>vendor\glm\glm\ext</Filter>
     </ClInclude>
@@ -846,6 +867,12 @@
     <ClInclude Include="vendor\glm\glm\ext\vector_packing.inl">
       <Filter>vendor\glm\glm\ext</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\glm\glm\ext\vector_reciprocal.hpp">
+      <Filter>vendor\glm\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glm\glm\ext\vector_reciprocal.inl">
+      <Filter>vendor\glm\glm\ext</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\glm\glm\ext\vector_relational.hpp">
       <Filter>vendor\glm\glm\ext</Filter>
     </ClInclude>
@@ -970,9 +997,6 @@
       <Filter>vendor\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\gtc\reciprocal.hpp">
-      <Filter>vendor\glm\glm\gtc</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\glm\glm\gtc\reciprocal.inl">
       <Filter>vendor\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\gtc\round.hpp">
@@ -1431,8 +1455,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Scene\SceneSerializer.h" />
-    <ClInclude Include="src\ClemEngine\Utils\PlatformUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
@@ -1504,6 +1526,9 @@
     <ClCompile Include="src\ClemEngine\Scene\SceneCamera.cpp">
       <Filter>src\ClemEngine\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Scene\SceneSerializer.cpp">
+      <Filter>src\ClemEngine\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1528,6 +1553,9 @@
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1537,7 +1565,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\Scene\SceneSerializer.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp" />
   </ItemGroup>
 </Project>

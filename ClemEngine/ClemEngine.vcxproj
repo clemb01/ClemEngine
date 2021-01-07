@@ -315,6 +315,8 @@
     <ClInclude Include="vendor\glm\glm\ext\matrix_int4x3_sized.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\matrix_int4x4.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\matrix_int4x4_sized.hpp" />
+    <ClInclude Include="vendor\glm\glm\ext\matrix_integer.hpp" />
+    <ClInclude Include="vendor\glm\glm\ext\matrix_integer.inl" />
     <ClInclude Include="vendor\glm\glm\ext\matrix_projection.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\matrix_projection.inl" />
     <ClInclude Include="vendor\glm\glm\ext\matrix_relational.hpp" />
@@ -365,6 +367,8 @@
     <ClInclude Include="vendor\glm\glm\ext\scalar_integer.inl" />
     <ClInclude Include="vendor\glm\glm\ext\scalar_packing.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\scalar_packing.inl" />
+    <ClInclude Include="vendor\glm\glm\ext\scalar_reciprocal.hpp" />
+    <ClInclude Include="vendor\glm\glm\ext\scalar_reciprocal.inl" />
     <ClInclude Include="vendor\glm\glm\ext\scalar_relational.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\scalar_relational.inl" />
     <ClInclude Include="vendor\glm\glm\ext\scalar_uint_sized.hpp" />
@@ -408,6 +412,8 @@
     <ClInclude Include="vendor\glm\glm\ext\vector_integer.inl" />
     <ClInclude Include="vendor\glm\glm\ext\vector_packing.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\vector_packing.inl" />
+    <ClInclude Include="vendor\glm\glm\ext\vector_reciprocal.hpp" />
+    <ClInclude Include="vendor\glm\glm\ext\vector_reciprocal.inl" />
     <ClInclude Include="vendor\glm\glm\ext\vector_relational.hpp" />
     <ClInclude Include="vendor\glm\glm\ext\vector_relational.inl" />
     <ClInclude Include="vendor\glm\glm\ext\vector_uint1.hpp" />
@@ -450,7 +456,6 @@
     <ClInclude Include="vendor\glm\glm\gtc\random.hpp" />
     <ClInclude Include="vendor\glm\glm\gtc\random.inl" />
     <ClInclude Include="vendor\glm\glm\gtc\reciprocal.hpp" />
-    <ClInclude Include="vendor\glm\glm\gtc\reciprocal.inl" />
     <ClInclude Include="vendor\glm\glm\gtc\round.hpp" />
     <ClInclude Include="vendor\glm\glm\gtc\round.inl" />
     <ClInclude Include="vendor\glm\glm\gtc\type_aligned.hpp" />
