@@ -14,3 +14,6 @@
 [submodule "ClemEngine/vendor/GLFW"]
 	path = ClemEngine/vendor/GLFW
 	url = https://github.com/clemb01/glfw
+[submodule "ClemEngine/vendor/ImGuizmo"]
+	path = ClemEngine/vendor/ImGuizmo
+	url = https://github.com/clemb01/ImGuizmo

@@ -29,7 +29,7 @@ namespace ClemEngine
 			Semicolon = 59, /* ; */
 			Equal = 61, /* = */
 
-			A = 87, //65,
+			A = 81, //65,
 			B = 66,
 			C = 67,
 			D = 68,

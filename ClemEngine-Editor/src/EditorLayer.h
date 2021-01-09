@@ -3,6 +3,8 @@
 #include "ClemEngine.h"
 #include "Panels/SceneHierarchyPanel.h"
 
+#include "ClemEngine/Renderer/EditorCamera.h"
+
 namespace ClemEngine
 {
 	class EditorLayer : public Layer
@@ -27,6 +29,7 @@ namespace ClemEngine
 
 	private:
 		OrthographicCameraController m_CameraController;
+		EditorCamera m_EditorCamera;
 
 		Ref<VertexArray> m_SquareVA;
 		Ref<Shader> m_FlatColorShader;
@@ -46,6 +49,8 @@ namespace ClemEngine
 		glm::vec2 m_ViewportSize = { 0.0f, 0.0f };
 
 		glm::vec4 m_TintColor = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+		int m_GizmoType = -1;
 
 		SceneHierarchyPanel m_SceneHierarchyPanel;
 	};

@@ -1,3 +1,5 @@
+include "./vendor/premake/premake_customization/solution_items.lua"
+
 workspace "ClemEngine"
 	architecture "x86_64"
 	startproject "ClemEngine-Editor"
@@ -7,7 +9,12 @@ workspace "ClemEngine"
 		"Debug",
 		"Release",
 		"Dist"
-	}	
+	}
+
+	solution_items
+	{
+		".editorconfig"
+	}
 
 	flags
 	{
@@ -17,193 +24,23 @@ workspace "ClemEngine"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "ClemEngine/vendor/GLFW/include"
-IncludeDir["Glad"] = "ClemEngine/vendor/GLAD/include"
-IncludeDir["ImGui"] = "ClemEngine/vendor/imgui"
-IncludeDir["glm"] = "ClemEngine/vendor/glm"
-IncludeDir["stb_image"] = "ClemEngine/vendor/stb_image"
-IncludeDir["entt"] = "ClemEngine/vendor/entt/include"
-IncludeDir["yaml_cpp"] = "ClemEngine/vendor/yaml-cpp/include"
+IncludeDir["GLFW"] = "%{wks.location}/ClemEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "%{wks.location}/ClemEngine/vendor/GLAD/include"
+IncludeDir["ImGui"] = "%{wks.location}/ClemEngine/vendor/imgui"
+IncludeDir["glm"] = "%{wks.location}/ClemEngine/vendor/glm"
+IncludeDir["stb_image"] = "%{wks.location}/ClemEngine/vendor/stb_image"
+IncludeDir["entt"] = "%{wks.location}/ClemEngine/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "%{wks.location}/ClemEngine/vendor/yaml-cpp/include"
+IncludeDir["ImGuizmo"] = "%{wks.location}/ClemEngine/vendor/ImGuizmo"
 
 group "Dependencies"
+	include "vendor/premake"
 	include "ClemEngine/vendor/GLFW"
 	include "ClemEngine/vendor/Glad"
 	include "ClemEngine/vendor/imgui"
 	include "ClemEngine/vendor/yaml-cpp"
 group ""
 
-project "ClemEngine"
-	location "ClemEngine"
-	kind "StaticLib"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-	pchheader "cepch.h"
-	pchsource "ClemEngine/src/cepch.cpp"
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/vendor/stb_image/**.h",
-		"%{prj.name}/vendor/stb_image/**.cpp",
-		"%{prj.name}/vendor/glm/glm/**.hpp",
-		"%{prj.name}/vendor/glm/glm/**.inl"
-	}
-
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS",
-		"GLFW_INCLUDE_NONE",
-		"CE_KEYBOARD_AZERTY"
-	}
-
-	includedirs
-	{
-		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}",
-		"%{IncludeDir.yaml_cpp}"
-	}
-	
-	links
-	{
-		"GLFW",
-		"Glad",
-		"ImGui",
-		"yaml-cpp",
-		"opengl32.lib"
-	}
-
-	filter "system:windows"
-		systemversion "latest"
-
-	filter "configurations:Debug"
-		defines "CE_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "CE_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "CE_DIST"
-		runtime "Release"
-		optimize "on"
-
-project "Sandbox"
-	location "Sandbox"
-	kind "ConsoleApp"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
-	}
-
-	includedirs
-	{
-		"ClemEngine/vendor/spdlog/include",
-		"ClemEngine/src",
-		"ClemEngine/vendor",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
-	}
-
-	links
-	{
-		"ClemEngine"
-	}
-
-	filter "system:windows"
-		systemversion "latest"
-
-		defines
-		{
-			"CE_KEYBOARD_AZERTY"
-		}		
-
-	filter "configurations:Debug"
-		defines "CE_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "CE_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "CE_DIST"
-		runtime "Release"
-		optimize "on"
-
-project "ClemEngine-Editor"
-	location "ClemEngine-Editor"
-	kind "ConsoleApp"
-	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-	files
-	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
-	}
-
-	includedirs
-	{
-		"ClemEngine/vendor/spdlog/include",
-		"ClemEngine/src",
-		"ClemEngine/vendor",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
-	}
-
-	links
-	{
-		"ClemEngine"
-	}
-
-	filter "system:windows"
-		systemversion "latest"
-
-		defines
-		{
-			"CE_KEYBOARD_AZERTY"
-		}		
-
-	filter "configurations:Debug"
-		defines "CE_DEBUG"
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:Release"
-		defines "CE_RELEASE"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
-		defines "CE_DIST"
-		runtime "Release"
-		optimize "on"
+include "ClemEngine"
+include "Sandbox"
+include "ClemEngine-Editor"

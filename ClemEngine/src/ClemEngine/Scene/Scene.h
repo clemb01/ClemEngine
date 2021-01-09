@@ -1,7 +1,9 @@
 #pragma once
 
-#include <entt.hpp>
 #include "ClemEngine/Core/Timestep.h"
+#include "ClemEngine/Renderer/EditorCamera.h"
+
+#include <entt.hpp>
 
 namespace ClemEngine
 {
@@ -16,8 +18,11 @@ namespace ClemEngine
 		Entity CreateEntity(const std::string& name = std::string());
 		void DestroyEntity(Entity entity);
 
-		void OnUpdate(Timestep ts);
+		void OnUpdateRuntime(Timestep ts);
+		void OnUpdateEditor(Timestep ts, EditorCamera& camera);
 		void OnViewportResize(uint32_t width, uint32_t height);
+
+		Entity GetPrimaryCameraEntity();
 
 	private:
 		template<typename T>
