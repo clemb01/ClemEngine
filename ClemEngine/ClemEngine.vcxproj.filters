@@ -19,6 +19,9 @@
     <Filter Include="src\ClemEngine\ImGui">
       <UniqueIdentifier>{7D39D6A1-69C8-5F6B-12E7-7366FE547011}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ClemEngine\Math">
+      <UniqueIdentifier>{CC6AAB0C-38CC-881A-C139-CFCC2D9ABFD9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\ClemEngine\Renderer">
       <UniqueIdentifier>{190BE0B9-8542-2851-8E4C-8C74FA024F4A}</UniqueIdentifier>
     </Filter>
@@ -126,10 +129,16 @@
     <ClInclude Include="src\ClemEngine\ImGui\ImGuiLayer.h">
       <Filter>src\ClemEngine\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\ClemEngine\Math\Math.h">
+      <Filter>src\ClemEngine\Math</Filter>
+    </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Buffer.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Camera.h">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ClemEngine\Renderer\EditorCamera.h">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\ClemEngine\Renderer\Framebuffer.h">
@@ -1461,8 +1470,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\ClemEngine\Math\Math.h" />
-    <ClInclude Include="src\ClemEngine\Renderer\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ClemEngine\Core\Application.cpp">
@@ -1486,7 +1493,13 @@
     <ClCompile Include="src\ClemEngine\ImGui\ImGuiLayer.cpp">
       <Filter>src\ClemEngine\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\ClemEngine\Math\Math.cpp">
+      <Filter>src\ClemEngine\Math</Filter>
+    </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\Buffer.cpp">
+      <Filter>src\ClemEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ClemEngine\Renderer\EditorCamera.cpp">
       <Filter>src\ClemEngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\ClemEngine\Renderer\Framebuffer.cpp">
@@ -1576,7 +1589,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\ClemEngine\Math\Math.cpp" />
-    <ClCompile Include="src\ClemEngine\Renderer\EditorCamera.cpp" />
   </ItemGroup>
 </Project>
