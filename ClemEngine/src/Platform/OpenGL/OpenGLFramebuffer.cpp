@@ -72,10 +72,22 @@ namespace ClemEngine
 		{
 			switch (format)
 			{
-			case FramebufferTextureFormat::DEPTH24STENCIL8: return true;
+				case FramebufferTextureFormat::DEPTH24STENCIL8: return true;
 			}
 
 			return false;
+		}
+
+		static GLenum  ClemEngineFBTextureFormatToGL(FramebufferTextureFormat format)
+		{
+			switch (format)
+			{
+				case FramebufferTextureFormat::RGBA8: return GL_RGBA8;
+				case FramebufferTextureFormat::RED_INTEGER: return GL_RED_INTEGER;
+			}
+
+			CE_CORE_ASSERT(false);
+			return 0;
 		}
 	}
 
@@ -203,5 +215,13 @@ namespace ClemEngine
 		glReadPixels(x, y, 1, 1, GL_RED_INTEGER, GL_INT, &pixelData);
 
 		return pixelData;
+	}
+
+	void OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
+	{
+		CE_CORE_ASSERT(attachmentIndex < m_ColorAttachments.size());
+
+		auto& spec = m_ColorAttachmentSpecifications[attachmentIndex];
+		glClearTexImage(m_ColorAttachments[attachmentIndex], 0, Utils::ClemEngineFBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);
 	}
 }

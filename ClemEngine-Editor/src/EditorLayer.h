@@ -40,6 +40,8 @@ namespace ClemEngine
 		Entity m_CameraEntity;
 		Entity m_SecondCamera;
 
+		Entity m_HoveredEntity;
+
 		bool m_PrimaryCamera = false;
 
 		Ref<Texture2D> m_CheckerboardTexture;
