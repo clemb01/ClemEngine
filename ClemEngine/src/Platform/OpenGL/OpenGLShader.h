@@ -42,9 +42,12 @@ namespace ClemEngine
 		std::string ReadFile(const std::string& filepath);
 		std::unordered_map<GLenum, std::string> PreProcess(const std::string& source);
 		void Compile(std::unordered_map<GLenum, std::string>& shaderSource);
+		void CompileOrGetVulkanBinaries(std::unordered_map<GLenum, std::string>& shaderSources);
+		void Reflect(GLenum stage, const std::vector<uint32_t>& shaderData);
 
 	private:
 		uint32_t m_RendererID;
+		std::string m_FilePath;
 		std::string m_Name;
 	};
 }

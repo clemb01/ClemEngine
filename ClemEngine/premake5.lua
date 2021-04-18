@@ -2,7 +2,7 @@ project "ClemEngine"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
@@ -39,7 +39,8 @@ project "ClemEngine"
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.yaml_cpp}",
-		"%{IncludeDir.ImGuizmo}"
+		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.VulkanSDK}"
 	}
 	
 	links
@@ -48,11 +49,13 @@ project "ClemEngine"
 		"Glad",
 		"ImGui",
 		"yaml-cpp",
-		"opengl32.lib"
+		"opengl32.lib",
+		"%{LibraryDir.VulkanSDK}/shaderc_sharedd.lib",
+		"%{LibraryDir.VulkanSDK}/spirv-cross-cored.lib",
 	}
 
 	filter "files:vendor/ImGuizmo/**.cpp"
-		flags { "NoPCH" }
+	flags { "NoPCH" }
 
 	filter "system:windows"
 		systemversion "latest"

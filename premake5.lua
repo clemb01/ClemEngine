@@ -32,9 +32,12 @@ IncludeDir["stb_image"] = "%{wks.location}/ClemEngine/vendor/stb_image"
 IncludeDir["entt"] = "%{wks.location}/ClemEngine/vendor/entt/include"
 IncludeDir["yaml_cpp"] = "%{wks.location}/ClemEngine/vendor/yaml-cpp/include"
 IncludeDir["ImGuizmo"] = "%{wks.location}/ClemEngine/vendor/ImGuizmo"
+IncludeDir["VulkanSDK"] = "%{wks.location}/ClemEngine/vendor/VulkanSDK/include"
+
+LibraryDir = {}
+LibraryDir["VulkanSDK"] = "%{wks.location}/ClemEngine/vendor/VulkanSDK/Lib"
 
 group "Dependencies"
-	include "vendor/premake"
 	include "ClemEngine/vendor/GLFW"
 	include "ClemEngine/vendor/Glad"
 	include "ClemEngine/vendor/imgui"
